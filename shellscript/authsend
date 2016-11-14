@@ -1,0 +1,1 @@
+scp -i ../../../.ssh/id_rsa ../gen_xml/FOIL-B1-L-0057.xml oaboamer@gem-machine-a:/home/dbspool/data/gem/int2r/FOIL-B1-L-0057.xml

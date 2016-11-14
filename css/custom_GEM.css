@@ -1,0 +1,20 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 26, 2016, 7:15:54 PM
+    Author     : ola
+*/
+
+    .sublabel {
+        width: 130px;
+    }
+    
+/*    .sdv,.epd {
+      display: none; 
+    }*/
+    .chosen-select-chamber-l1,.chosen-select-chamber-l2,.chosen-select-chamber-s1,.chosen-select-chamber-s2, select[class^="chosen-select"],select[class^="chosen-select-part-"]{
+        width: 150px;
+    }
