@@ -121,6 +121,18 @@ width:35px;
 display:inline-block;    
 text-decoration: none;
 vertical-align:text-center; border-radius: 25px; margin-top: -8px;">  GEM Detector Database</a>
+
+<div class="navbar-buttons navbar-header pull-right" role="navigation">
+<ul class="nav ace-nav">
+<li class="green dropdown-modal">
+  
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+								<span class="badge badge-success"> Production</span>
+							</a>
+  </li>
+</ul>
+</div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
              <form class="navbar-form navbar-right" method="GET" action="search.php">
