@@ -8,13 +8,13 @@ include_once "globals_functions.php";
 
 // Get KIND OF PARTS IDs from DB
 $resultArr = get_parts_kinds_set_globals();
-print_r($resultArr);
+//print_r($resultArr);
 // Get KIND OF Conditions IDs from DB
 $resultArr_kinds = get_conditions_kinds_set_globals();
-print_r($resultArr_kinds);
+//print_r($resultArr_kinds);
 // Get part to part relations IDs from DB
 $resultArr_p2pr = get_part_part_relns_set_globals();
-print_r($resultArr_p2pr);
+//print_r($resultArr_p2pr);
 
 /* Kind of parts Constants */
 /*
