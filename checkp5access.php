@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-$url = "http://cmsgem.cern.ch/gem/";
+$url = "http://cmsgem.cern.ch/gem/cmsdbldr/";
 $handle = curl_init($url);
 curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
 
