@@ -18,28 +18,19 @@ print_r($resultArr_p2pr);
 
 /* Kind of parts Constants */
 /*
- * GEM Detector ROOT
- * GEM Foil
- * GEM Readout PCB
- * GEM VFAT2
- * Generic GEM part
- * Generic GEM parent part
- * CAEN N1145 Scalar
- * ORTEC 935 CFD Discriminator
- * Lecroy 623A Discriminator
- * ORTEC 474 Timing Filter Amp
- * ORTEC 142PC Preamplifier
- * CAEN A422A Charge Sensitive Preamp
- * GEM HV Circuit
- * GEM Drift PCB
- * GEM Chamber
- * GEM Super Chamber
- * GEM Opto Hybrid
- * GEM AMC Gigabit Link Interface Board
- * GEM AMC13 Board
- * GEM Main Carrier HUB
- * GEM Micro TCA Crate
- * GEM Electronics Board  
+    [GEM Detector ROOT] => 1020
+    [GEM Foil] => 1040
+    [GEM Readout PCB] => 1060
+    [GEM Drift PCB] => 1080
+    [GEM VFAT2] => 1120
+    [GEM Chamber] => 1140
+    [GEM Super Chamber] => 1160
+    [GEM Electronics Board] => 1400
+    [GEM Opto Hybrid] => 1420
+    [GEM AMC13 Board] => 1440
+    [GEM AMC Gigabit Link Interface Board] => 1460
+    [GEM Main Carrier HUB] => 1480
+    [GEM Micro TCA Crate
  */
 // 1st IDs
 // GEM Detector ROOT
@@ -80,18 +71,18 @@ $MICROTCA_KIND_OF_PART_ID = $resultArr['GEM Micro TCA Crate'];
 //$GEB_KIND_OF_PART_ID = "10000000000002799"; 
 $GEB_KIND_OF_PART_ID = $resultArr['GEM Electronics Board'];
  
-//Kind of part id for CEAN N1145
-$CEANN1145_KIND_OF_PART_ID = $resultArr['CAEN N1145 Scalar'];
-//Kind of part id for ORTEC 935
-$ORTEC935_KIND_OF_PART_ID = $resultArr['ORTEC 935 CFD Discriminator'];
-//Kind of part id for Lecroy 623A
-$Lecroy623A_KIND_OF_PART_ID = $resultArr['Lecroy 623A Discriminator'];
-//Kind of part id for ORTEC 474
-$ORTEC474_KIND_OF_PART_ID = $resultArr['ORTEC 474 Timing Filter Amp'];
-//Kind of part id for ORTEC 142PC
-$ORTEC142PC_KIND_OF_PART_ID = $resultArr['ORTEC 142PC Preamplifier'];
-//Kind of part id for CAEN A422A
-$CAENA422A_KIND_OF_PART_ID = $resultArr['CAEN A422A Charge Sensitive Preamp'];
+////Kind of part id for CEAN N1145
+//$CEANN1145_KIND_OF_PART_ID = $resultArr['CAEN N1145 Scalar'];
+////Kind of part id for ORTEC 935
+//$ORTEC935_KIND_OF_PART_ID = $resultArr['ORTEC 935 CFD Discriminator'];
+////Kind of part id for Lecroy 623A
+//$Lecroy623A_KIND_OF_PART_ID = $resultArr['Lecroy 623A Discriminator'];
+////Kind of part id for ORTEC 474
+//$ORTEC474_KIND_OF_PART_ID = $resultArr['ORTEC 474 Timing Filter Amp'];
+////Kind of part id for ORTEC 142PC
+//$ORTEC142PC_KIND_OF_PART_ID = $resultArr['ORTEC 142PC Preamplifier'];
+////Kind of part id for CAEN A422A
+//$CAENA422A_KIND_OF_PART_ID = $resultArr['CAEN A422A Charge Sensitive Preamp'];
 
 
 //2nd Names
