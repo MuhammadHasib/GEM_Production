@@ -45,8 +45,9 @@
                     $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully created XML file for GEM FOIL  <strong>ID:</strong> ' . $_POST['serial'] .
                     '</div>';
+            print_r($_SESSION);
                     // redirect to confirm page
-                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                    //header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
                         die();
                 }
             } else {

@@ -311,7 +311,7 @@ include "foot.php";
      */
     $('.dropdown-menu a').on('click', function () {
 
-        iif ($(this).html() == "Long") {
+        if ($(this).html() == "Long") {
             $('#preloader').fadeIn('fast', function () {});
             $("#vers").text("L");
             $(".serialInput").val($(".serial").text());
