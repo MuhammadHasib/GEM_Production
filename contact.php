@@ -11,7 +11,7 @@ include "head.php";
 		$message = $_POST['message'];
 		$human = intval($_POST['human']);
 		$from = 'GEM DB Contact Form'; 
-		$to = 'ola.aboamer@cern.ch'; 
+		$to = 'hasbuddin.md@cern.ch'; 
 		$subject = "GEM_GUI_".$_POST['subject'];;
 		
 		$body ="From: $name\n E-Mail: $email\n Message:\n $message";

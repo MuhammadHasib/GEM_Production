@@ -26,7 +26,7 @@ if(isset($_SESSION['post_return']) && isset($_SESSION['new_chamber_ntfy'])){
     if($session['statuscode'] == "200"){
         echo '</br><span class="label label-success"> <b>Status code:</b>'.$session['statuscode'].'</span> ';
         echo '<span class="label label-success label-white middle">Successfully loaded into Database</span>';
-        echo '<hr><div class="alert alert-success" role="alert"><b>Execution return:</b>'.$session['return'].'</div>'; 
+       // echo '<hr><div class="alert alert-success" role="alert"><b>Execution return:</b>'.$session['return'].'</div>'; 
         error_log($session['statuscode']." - ".$session['return'], 3, "gui-errors.log");
     }
     else if($session['statuscode'] == "503"){

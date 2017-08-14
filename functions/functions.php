@@ -448,12 +448,14 @@ function get_attached_parts($part_id) {
     global $OPTOHYBRID_TO_GEB;
     global $GEB_TO_READOUT;
     global $READOUT_TO_CHAMBER;
+    global $FRAME_TO_CHAMBER;
     global $DRIFT_TO_CHAMBER;
     global $FOIL_TO_CHAMBER;
     global $CHAMBER_KIND_OF_PART_NAME;
     global $DRIFT_KIND_OF_PART_NAME;
     global $FOIL_KIND_OF_PART_NAME;
     global $READOUT_KIND_OF_PART_NAME;
+    global $FRAME_KIND_OF_PART_NAME;
     global $VFAT_KIND_OF_PART_NAME;
     global $OPTOHYBRID_KIND_OF_PART_NAME;
     global $GEB_KIND_OF_PART_NAME;
@@ -485,7 +487,13 @@ function get_attached_parts($part_id) {
             $serial = $serialarr[0]['SERIAL_NUMBER'];
             echo '<li class="list-group-item" style="white-space:nowrap"><label> Drift:</label> <a href="show_drift.php?id=' . $serial . '">' . $serial . '</a> <a style="color: red; padding-left:4em " href="javascript:void(0);" class="detach" id="' . $serial . '" kind="' . $DRIFT_KIND_OF_PART_NAME . '"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
         }
-        // Readout -> chamber
+        // Frame -> chamber
+        else if ($row['RELATIONSHIP_ID'] === $FRAME_TO_CHAMBER) {
+            $serialarr = getSerialById($row['PART_ID']);
+            $serial = $serialarr[0]['SERIAL_NUMBER'];
+            echo '<li class="list-group-item" style="white-space:nowrap"><label> Frame:</label> <br> <a href="show_frame.php?id=' . $serial . '">' . $serial . '</a> <a style="color: red; padding-left:4em " href="javascript:void(0);" class="detach" id="' . $serial . '" kind="' . $FRAME_KIND_OF_PART_NAME . '"><span aria-hidden="true" class="glyphicon glyphicon-resize-full"></span> Detach <span aria-hidden="true" class="glyphicon glyphicon-remove"></span></a> </li>';
+       }
+	 // Readout -> chamber
         else if ($row['RELATIONSHIP_ID'] === $READOUT_TO_CHAMBER) {
             $serialarr = getSerialById($row['PART_ID']);
             $serial = $serialarr[0]['SERIAL_NUMBER'];
@@ -555,9 +563,10 @@ function getSerialById($id) {
 function list_chambers() {
 
     // Database connection 
-    $conn = database_connection();
+    $conn = database_connection($kindId);
     global $CHAMBER_KIND_OF_PART_ID;
     $sql = "SELECT SERIAL_NUMBER  FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $CHAMBER_KIND_OF_PART_ID . "' AND IS_RECORD_DELETED = 'F'"; //select data or insert data
+    //$sql = "SELECT SERIAL_NUMBER  FROM CMS_GEM_CORE_CONSTRUCT.PARTS WHERE KIND_OF_PART_ID='" . $kindId . "' AND IS_RECORD_DELETED = 'F'"; //select data or insert data
     // Execute query  
     $query = oci_parse($conn, $sql);
     //Oci_bind_by_name($query,':bind_name',$bind_para); //if needed

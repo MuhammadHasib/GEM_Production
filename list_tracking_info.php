@@ -21,7 +21,7 @@ include "head.php";
                                 
                                 
                                 <label for="exampleInputFile">Please type the item Serial Number: </label>
-                                <input class="num" name="serialnum" value=""  onblur="if($(this).val() !== '' && $('#kindofpart').val() !== '')$('.subbutt_at').attr('disabled', false);">
+                                <input class="num" name="serialnum" value=""  onblur="if($(this).val() !== '' && $('#kindofpart').val() !== '')$('.subbutt_at').attr('disabled', true);">
                                 
                                 
                             </div>

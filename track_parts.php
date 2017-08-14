@@ -65,7 +65,7 @@
       <strong>Well done!</strong> You successfully generated XML file for list of Components tracking info 
                     </div>';
                     // redirect to confirm page
-                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                    header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
                         die();
                    
             }
@@ -129,7 +129,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                         </div>
                                 <br>
                                 <label for="exampleInputFile">How many Parts do you want to load tracking information for ?? </label>
-                                <input class="num" name="numOfParts" value=""  onblur="if($(this).val() !== '' && $('#kindofpart').val() !== '')$('.subbutt_at').attr('disabled', false);">
+                                <input class="num" name="numOfParts" value=""  onblur="if($(this).val() !== '' && $('#kindofpart').val() !== '')$('.subbutt_at').attr('disabled', true);">
                                 
                                 
                             </div>

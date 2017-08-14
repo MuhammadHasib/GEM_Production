@@ -47,7 +47,7 @@
                     '</div>';
                     //print_r($_SESSION);
                     // redirect to confirm page
-                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                    header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
                         die();
                 }
             } else {
@@ -55,7 +55,46 @@
 <?php
 include "head.php";
 ?>
+<style>
+    .scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+    /* Flashing */
+    .hover13 a:hover img {
+        opacity: 1;
+        -webkit-animation: flash 1.5s;
+        animation: flash 1.5s;
+        border: 1px inset;
+    }
+    @-webkit-keyframes flash {
+        0% {
+            opacity: .4;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes flash {
+        0% {
+            opacity: .4;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 
+
+    .rellists{
+        display: none;
+    }
+
+    .rellists .dropdown{
+        margin: 15px;
+    }
+
+</style>
 <?php
 //$serial_num_of_newest_part = get_part_ID($FOIL_KIND_OF_PART_ID);
 //if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
@@ -119,7 +158,7 @@ include "head.php";
                                             Choose Batch
                                             <span class="caret"></span>
                                         </button> 
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
                                             <li><a href="#" class="batchnum">1</a></li>
                                             <li><a href="#" class="batchnum">2</a></li>
                                             <li><a href="#" class="batchnum">3</a></li>
@@ -130,6 +169,34 @@ include "head.php";
                                             <li><a href="#" class="batchnum">8</a></li>
                                             <li><a href="#" class="batchnum">9</a></li>
                                             <li><a href="#" class="batchnum">10</a></li>
+                                            <li><a href="#" class="batchnum">11</a></li>
+                                            <li><a href="#" class="batchnum">12</a></li>
+                                            <li><a href="#" class="batchnum">13</a></li>
+                                            <li><a href="#" class="batchnum">14</a></li>
+                                            <li><a href="#" class="batchnum">15</a></li>
+                                            <li><a href="#" class="batchnum">16</a></li>
+                                            <li><a href="#" class="batchnum">17</a></li>
+                                            <li><a href="#" class="batchnum">18</a></li>
+                                            <li><a href="#" class="batchnum">19</a></li>
+                                            <li><a href="#" class="batchnum">20</a></li>
+                                            <li><a href="#" class="batchnum">21</a></li>
+                                            <li><a href="#" class="batchnum">22</a></li>
+                                            <li><a href="#" class="batchnum">23</a></li>
+                                            <li><a href="#" class="batchnum">24</a></li>
+                                            <li><a href="#" class="batchnum">25</a></li>
+                                            <li><a href="#" class="batchnum">26</a></li>
+                                            <li><a href="#" class="batchnum">27</a></li>
+                                            <li><a href="#" class="batchnum">28</a></li>
+                                            <li><a href="#" class="batchnum">29</a></li>
+                                            <li><a href="#" class="batchnum">30</a></li>
+                                            <li><a href="#" class="batchnum">31</a></li>
+                                            <li><a href="#" class="batchnum">32</a></li>
+                                            <li><a href="#" class="batchnum">33</a></li>
+                                            <li><a href="#" class="batchnum">34</a></li>
+                                            <li><a href="#" class="batchnum">35</a></li>
+                                            <li><a href="#" class="batchnum">36</a></li>
+                                            <li><a href="#" class="batchnum">37</a></li>
+                                            <li><a href="#" class="batchnum">38</a></li>
                                         </ul>
                                     </div><br>
                                     <div class="dropdown">

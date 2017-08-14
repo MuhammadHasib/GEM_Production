@@ -9,6 +9,7 @@
                 <li id="<?= $READOUT_ID; ?>" class=""><a href="list_parts_readout.php">READOUTs</a>  
                 <li id="<?= $OPTOHYBRID_ID; ?>" class=""><a href="list_parts_opto.php">OPTOHYBRIDs</a>
                 <li id="<?= $VFAT_ID; ?>" class=""><a href="list_parts_vfat.php">VFATs</a>
+                <li id="<?= $FRAME_ID; ?>" class=""><a href="list_parts_frame.php">FRAMEs</a>  
             </ul>
         </li>
         <li id="chamber" class=""><a href="list_chambers.php"><i class="menu-icon fa fa-file-o"></i> Chambers</a></li>
@@ -16,6 +17,7 @@
         <li id="qc" class=""><a href="list_qc.php"><i class="menu-icon fa fa-file-o"></i> Quality Controls</a></li>
         <li id="track" class=""><a href="track_parts_step1.php"><span aria-hidden="true" class="glyphicon glyphicon-globe"></span> Tracking Parts</a></li>
         <li id="map" class=""><a href="search_channels_pin.php"><span aria-hidden="true" class="glyphicon glyphicon-search"></span> Channel mapping</a></li>
+        <li id="view" class=""><a href="Homes.php"><span aria-hidden="true" class="glyphicon glyphicon-search"></span> Detector View</a></li>
     </ul>
     <!-- <ul class="nav nav-sidebar">
        <li><a href="">Nav item</a></li>

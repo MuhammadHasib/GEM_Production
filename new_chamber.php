@@ -52,6 +52,11 @@
                         $child['KIND_OF_PART'] = $READOUT_KIND_OF_PART_NAME;
                         $childs[] = $child;
                     }
+                    if (!empty($_POST['efs'])) {
+                        $child['SERIAL_NUMBER'] = $_POST['efs'];
+                        $child['KIND_OF_PART'] = $FRAME_KIND_OF_PART_NAME;
+                        $childs[] = $child;
+                    }
                     if (!empty($_POST['drifts'])) {
                         $child['SERIAL_NUMBER'] = $_POST['drifts'];
                         $child['KIND_OF_PART'] = $DRIFT_KIND_OF_PART_NAME;
@@ -85,6 +90,11 @@
                     if (!empty($_POST['rol'])) {
                         $child['SERIAL_NUMBER'] = $_POST['rol'];
                         $child['KIND_OF_PART'] = $READOUT_KIND_OF_PART_NAME;
+                        $childs[] = $child;
+                    }
+                    if (!empty($_POST['efl'])) {
+                        $child['SERIAL_NUMBER'] = $_POST['efl'];
+                        $child['KIND_OF_PART'] = $FRAME_KIND_OF_PART_NAME;
                         $childs[] = $child;
                     }
                     if (!empty($_POST['driftl'])) {
@@ -132,7 +142,7 @@
       <strong>Well done!</strong> You successfully created GEM Chamber XML file <strong>ID:</strong> ' . $_POST['serial'] .
                     '</div>';
                     // redirect to confirm page
-                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                    header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
                         die();
                     
                     
@@ -142,6 +152,11 @@
 include "head.php";
 ?>
 <style>
+    .scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
     /* Flashing */
     .hover13 a:hover img {
         opacity: 1;
@@ -223,7 +238,7 @@ include "head.php";
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="float: left;">Serial Number:&nbsp;</label>
-                                    <div class="serial"><span class="name">GE1/1-VII-</span><span id="vers" class="version" >VERSION</span>-<span id="inst" class="institute">INSTITUTE</span><span class="id">-XXXX</span></div>
+                                    <div class="serial"><span class="name">GE1/1-X-</span><span id="vers" class="version" >VERSION</span>-<span id="inst" class="institute">INSTITUTE</span><span class="id">-XXXX</span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -234,7 +249,7 @@ include "head.php";
                                             Choose Version
                                             <span class="caret"></span>
                                         </button> 
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
                                             <li><a href="#">Long</a></li>
                                             <li><a href="#">Short</a></li>
                                         </ul>
@@ -278,7 +293,7 @@ include "head.php";
                                         </div>
 
                                     </div>
-                                    <div class="form-group">
+                                   <!-- <div class="form-group">
                                         <label for="exampleInputFile" >Manufacturer</label>
                                         <input name="manufacturer" value="" hidden>
                                         <div class="dropdown">
@@ -291,7 +306,7 @@ include "head.php";
                                             </ul>
                                         </div>
 
-                                    </div>
+                                    </div>-->
 
                                 </div>
                                 <!--                                <div class="form-group">
@@ -393,7 +408,7 @@ include "head.php";
                                                             Choose FOIL1
                                                             <span class="caret"></span>
                                                         </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
                                                             <?php get_available_parts($FOIL_KIND_OF_PART_ID, "-S-"); ?>
                                                         </ul>
 
@@ -408,7 +423,7 @@ include "head.php";
                                                             Choose FOIL2
                                                             <span class="caret"></span>
                                                         </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
                                                             <?php get_available_parts($FOIL_KIND_OF_PART_ID, "-S-"); ?>
                                                         </ul>
 
@@ -422,7 +437,7 @@ include "head.php";
                                                             Choose FOIL3
                                                             <span class="caret"></span>
                                                         </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
                                                             <?php get_available_parts($FOIL_KIND_OF_PART_ID, "-S-"); ?>
                                                         </ul>
 
@@ -446,7 +461,7 @@ include "head.php";
                                                             Choose FOIL1
                                                             <span class="caret"></span>
                                                         </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
                                                             <?php get_available_parts($FOIL_KIND_OF_PART_ID, "-L-"); ?>
                                                         </ul>
 
@@ -461,7 +476,7 @@ include "head.php";
                                                             Choose FOIL2
                                                             <span class="caret"></span>
                                                         </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
                                                             <?php get_available_parts($FOIL_KIND_OF_PART_ID, "-L-"); ?>
                                                         </ul>
 
@@ -475,7 +490,7 @@ include "head.php";
                                                             Choose FOIL3
                                                             <span class="caret"></span>
                                                         </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
                                                             <?php get_available_parts($FOIL_KIND_OF_PART_ID, "-L-"); ?>
                                                         </ul>
 
@@ -502,7 +517,7 @@ include "head.php";
                                                         Choose Drift PCB
                                                         <span class="caret"></span>
                                                     </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                    <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
                                                         <?php get_available_parts($DRIFT_KIND_OF_PART_ID, "-S-"); ?>
                                                     </ul>
 
@@ -521,8 +536,51 @@ include "head.php";
                                                         Choose Drift PCB
                                                         <span class="caret"></span>
                                                     </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                    <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
                                                         <?php get_available_parts($DRIFT_KIND_OF_PART_ID, "-L-"); ?>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 hover13">
+
+                                        <a href="#/" class="imgclick driftch"><img src="images/drift-chamber.png" width="100%"></a>
+                                        <div class="rellists">
+                                            <!-- Drift S-->
+                                            <div class="form-group shortframes" style="background: rgb(236, 249, 249) none repeat scroll 0 0;border: 1px outset;border-radius: 15px;  <?php
+                                            if ($serial_num[2] == "L") {
+                                                echo "display: none;";
+                                            }
+                                            ?>">
+                                                <input class="efs" name="efs"  hidden>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                        Choose External Frame
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
+                                                        <?php get_available_parts($FRAME_KIND_OF_PART_ID, "-S-"); ?>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+
+                                            <!-- Drift L-->
+                                            <div class="form-group longframes" style="background: rgb(236, 249, 249) none repeat scroll 0 0;border: 1px outset;border-radius: 15px;  <?php
+                                            if ($serial_num[2] == "S") {
+                                                echo "display: none;";
+                                            }
+                                            ?>">
+                                                <input class="efl" name="efl"  hidden>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                        Choose External Frame
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
+                                                        <?php get_available_parts($FRAME_KIND_OF_PART_ID, "-L-"); ?>
                                                     </ul>
 
                                                 </div>
@@ -621,9 +679,9 @@ include "foot.php";
                     success: function (data) {
                         $(".id").text(data);
                         $(".serialInput").val($(".serial").text());
-                        $(".longfoils,.longdrifts,.longreads").show();
-                        $(".shortfoils,.shortdrifts,.shortreads").hide();
-                        $(".ros, .drifts, .foil1s, .foil2s, .foil3s").empty();
+                        $(".longfoils,.longdrifts,.longframes,.longreads").show();
+                        $(".shortfoils,.shortdrifts,.shortframes,.shortreads").hide();
+                        $(".ros, .drifts,.efs, .foil1s, .foil2s, .foil3s").empty();
 
 
                     }
@@ -636,9 +694,9 @@ include "foot.php";
                     success: function (data) {
                         $(".id").text(data);
                         $(".serialInput").val($(".serial").text());
-                        $(".shortfoils,.shortdrifts,.shortreads").show();
-                        $(".longfoils,.longdrifts,.longreads").hide();
-                        $(".rol, .driftl, .foil1l, .foil2l, .foil3l").empty();
+                        $(".shortfoils,.shortdrifts,.shortframes,.shortreads").show();
+                        $(".longfoils,.longdrifts,.longframes,.longreads").hide();
+                        $(".rol, .driftl,.efl, .foil1l, .foil2l, .foil3l").empty();
                     }
                 });
 
@@ -727,9 +785,9 @@ include "foot.php";
         if ($(this).html() == "Long") {
             
             $("#vers").text("L");
-            $(".longfoils,.longdrifts,.longreads").show();
-            $(".shortfoils,.shortdrifts,.shortreads").hide();
-            $(".ros, .drifts, .foil1s, .foil2s, .foil3s").val("");
+            $(".longfoils,.longdrifts,.longframes,.longreads").show();
+            $(".shortfoils,.shortdrifts,.shortframes,.shortreads").hide();
+            $(".ros, .drifts,.efs, .foil1s, .foil2s, .foil3s").val("");
              $(".serialInput").val($(".serial").text());
             validateInput($(".serial").text());
 
@@ -738,9 +796,9 @@ include "foot.php";
         if ($(this).html() == "Short") {
             
             $("#vers").text("S");
-            $(".shortfoils,.shortdrifts,.shortreads").show();
-            $(".longfoils,.longdrifts,.longreads").hide();
-            $(".rol, .driftl, .foil1l, .foil2l, .foil3l").val("");
+            $(".shortfoils,.shortdrifts,.shortframes,.shortreads").show();
+            $(".longfoils,.longdrifts,.longframes,.longreads").hide();
+            $(".rol, .driftl,.efl, .foil1l, .foil2l, .foil3l").val("");
              $(".serialInput").val($(".serial").text());
             validateInput($(".serial").text());
 
@@ -764,9 +822,9 @@ include "foot.php";
     $(".subbutt_ch").click(function () {
 
         //alert(($(".rol").val().length == 0 || $(".driftl").val().length == 0  &&  $(".foil1l").val().length == 0  && $(".foil2l").val().length == 0  && $(".foil3l").val().length == 0  ));
-        var x = (($(".rol").val().length == 0) || ($(".driftl").val().length == 0) || ($(".foil1l").val().length == 0) || ($(".foil2l").val().length == 0) || ($(".foil3l").val().length == 0));
+        var x = (($(".rol").val().length == 0) || ($(".driftl").val().length == 0) || ($(".efl").val().length == 0) || ($(".foil1l").val().length == 0) || ($(".foil2l").val().length == 0) || ($(".foil3l").val().length == 0));
         //alert(($(".ros").val().length == 0  && $(".drifts").val().length == 0  && $(".foil1s").val().length == 0  && $(".foil2s").val().length == 0  && $(".foil3s").val().length == 0 ) ) ;
-        var y = (($(".ros").val().length == 0) || ($(".drifts").val().length == 0) || ($(".foil1s").val().length == 0) || ($(".foil2s").val().length == 0) || ($(".foil3s").val().length == 0));
+        var y = (($(".ros").val().length == 0) || ($(".drifts").val().length == 0) || ($(".efs").val().length == 0) || ($(".foil1s").val().length == 0) || ($(".foil2s").val().length == 0) || ($(".foil3s").val().length == 0));
 //       alert($(".serialInput").val().length == 0 );
         //alert(x);
         //alert(y);

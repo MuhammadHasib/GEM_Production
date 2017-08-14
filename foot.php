@@ -4,7 +4,7 @@
 
 <footer>
     <div class="footer text-center">
-        <p class="4">&copy; Copyright 2015</p> <p>Developed By: <a href="https://profiles.web.cern.ch/762283" target="_blank">Ola Aboamer</a></p>
+        <p class="4">&copy; Copyright 2017</p> <p>Developed By: <a href="https://profiles.web.cern.ch/749910" target="_blank">Ola & Muhammad Hasib </a></p>
     </div>
 </footer>
 
@@ -19,7 +19,8 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <script src="../../dist/js/bootstrap.min.js"></script>
-<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="ace-master/assets/js/bootstrap.min.js"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line-->
 <script src="../../assets/js/vendor/holder.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
@@ -268,7 +269,7 @@
                     });
                     $('body').load(
                             'https://gemdb.web.cern.ch/gemdb/proxy.php', {
-                                csurl: 'https://gemdb.web.cern.ch/gemdb/functions/ajaxActions.php',
+                                csurl: 'https://gemdb-p5.web.cern.ch/gemdb-p5/functions/ajaxActions.php',
                                 detach: true,
                                 partid: item.attr('id'),
                                 kind: item.attr('kind'),

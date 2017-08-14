@@ -18,19 +18,28 @@ $resultArr_p2pr = get_part_part_relns_set_globals();
 
 /* Kind of parts Constants */
 /*
-    [GEM Detector ROOT] => 1020
-    [GEM Foil] => 1040
-    [GEM Readout PCB] => 1060
-    [GEM Drift PCB] => 1080
-    [GEM VFAT2] => 1120
-    [GEM Chamber] => 1140
-    [GEM Super Chamber] => 1160
-    [GEM Electronics Board] => 1400
-    [GEM Opto Hybrid] => 1420
-    [GEM AMC13 Board] => 1440
-    [GEM AMC Gigabit Link Interface Board] => 1460
-    [GEM Main Carrier HUB] => 1480
-    [GEM Micro TCA Crate
+ * GEM Detector ROOT
+ * GEM Foil
+ * GEM Readout PCB
+ * GEM VFAT2
+ * Generic GEM part
+ * Generic GEM parent part
+ * CAEN N1145 Scalar
+ * ORTEC 935 CFD Discriminator
+ * Lecroy 623A Discriminator
+ * ORTEC 474 Timing Filter Amp
+ * ORTEC 142PC Preamplifier
+ * CAEN A422A Charge Sensitive Preamp
+ * GEM HV Circuit
+ * GEM Drift PCB
+ * GEM Chamber
+ * GEM Super Chamber
+ * GEM Opto Hybrid
+ * GEM AMC Gigabit Link Interface Board
+ * GEM AMC13 Board
+ * GEM Main Carrier HUB
+ * GEM Micro TCA Crate
+ * GEM Electronics Board  
  */
 // 1st IDs
 // GEM Detector ROOT
@@ -49,6 +58,8 @@ $FOIL_KIND_OF_PART_ID = $resultArr['GEM Foil'];
 //Kind of part id for Readout boards
 //$READOUT_KIND_OF_PART_ID = "10000000000001679";
 $READOUT_KIND_OF_PART_ID = $resultArr['GEM Readout PCB'];
+//$FRAME_KIND_OF_PART_ID = "10000000000001679";
+$FRAME_KIND_OF_PART_ID = $resultArr['GEM External Frame'];
 //Kind of part id for VFAT chips
 //$VFAT_KIND_OF_PART_ID = "10000000000001699";
 $VFAT_KIND_OF_PART_ID = $resultArr['GEM VFAT2'];
@@ -71,18 +82,18 @@ $MICROTCA_KIND_OF_PART_ID = $resultArr['GEM Micro TCA Crate'];
 //$GEB_KIND_OF_PART_ID = "10000000000002799"; 
 $GEB_KIND_OF_PART_ID = $resultArr['GEM Electronics Board'];
  
-////Kind of part id for CEAN N1145
-//$CEANN1145_KIND_OF_PART_ID = $resultArr['CAEN N1145 Scalar'];
-////Kind of part id for ORTEC 935
-//$ORTEC935_KIND_OF_PART_ID = $resultArr['ORTEC 935 CFD Discriminator'];
-////Kind of part id for Lecroy 623A
-//$Lecroy623A_KIND_OF_PART_ID = $resultArr['Lecroy 623A Discriminator'];
-////Kind of part id for ORTEC 474
-//$ORTEC474_KIND_OF_PART_ID = $resultArr['ORTEC 474 Timing Filter Amp'];
-////Kind of part id for ORTEC 142PC
-//$ORTEC142PC_KIND_OF_PART_ID = $resultArr['ORTEC 142PC Preamplifier'];
-////Kind of part id for CAEN A422A
-//$CAENA422A_KIND_OF_PART_ID = $resultArr['CAEN A422A Charge Sensitive Preamp'];
+//Kind of part id for CEAN N1145
+$CEANN1145_KIND_OF_PART_ID = $resultArr['CAEN N1145 Scalar'];
+//Kind of part id for ORTEC 935
+$ORTEC935_KIND_OF_PART_ID = $resultArr['ORTEC 935 CFD Discriminator'];
+//Kind of part id for Lecroy 623A
+$Lecroy623A_KIND_OF_PART_ID = $resultArr['Lecroy 623A Discriminator'];
+//Kind of part id for ORTEC 474
+$ORTEC474_KIND_OF_PART_ID = $resultArr['ORTEC 474 Timing Filter Amp'];
+//Kind of part id for ORTEC 142PC
+$ORTEC142PC_KIND_OF_PART_ID = $resultArr['ORTEC 142PC Preamplifier'];
+//Kind of part id for CAEN A422A
+$CAENA422A_KIND_OF_PART_ID = $resultArr['CAEN A422A Charge Sensitive Preamp'];
 
 
 //2nd Names
@@ -96,6 +107,8 @@ $DRIFT_KIND_OF_PART_NAME = "GEM Drift PCB";
 $FOIL_KIND_OF_PART_NAME = "GEM Foil";
 //Kind of part name for Readout boards
 $READOUT_KIND_OF_PART_NAME = "GEM Readout PCB";
+//Kind of part name for Readout boards
+$FRAME_KIND_OF_PART_NAME = "GEM External Frame";
 //Kind of part name for VFAT chips
 $VFAT_KIND_OF_PART_NAME = "GEM VFAT2";
 //Kind of part name for Optohybrids
@@ -149,6 +162,8 @@ $DRIFT_ID = "GEMDriftPCB";
 $FOIL_ID = "GEMFoil";
 //Kind of part name for Readout boards
 $READOUT_ID = "GEMReadoutPCB";
+//Kind of part name for Readout boards
+$FRAME_ID = "GEMExternalFrame";
 //Kind of part name for VFAT chips
 $VFAT_ID = "GEMVFAT";
 //Kind of part name for Optohybrids
@@ -178,6 +193,9 @@ $GEB_TO_READOUT = $resultArr_p2pr['AutoAssigned: GEM Electronics Board --> GEM R
 
 //$READOUT_TO_CHAMBER="10000000000002000";
 $READOUT_TO_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM Readout PCB --> GEM Chamber'];
+
+//$READOUT_TO_CHAMBER="10000000000002000";
+$FRAME_TO_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM External Frame --> GEM Chamber'];
 
 //$FOIL_TO_CHAMBER="10000000000002001";
 $FOIL_TO_CHAMBER = $resultArr_p2pr['AutoAssigned: GEM Foil --> GEM Chamber'];
@@ -220,7 +238,6 @@ $ROOT_SERIAL_NUM="ROOT";
 //Kind of part name for ROOT
 $ROOT_KIND_OF_PART_NAME = "GEM Detector ROOT";
 $ROOT_PART_ID = getROOT($ROOT_KIND_OF_PART_ID);
-echo $ROOT_PART_ID;
 
 /**** Conditions Kinds IDs****/
  $TRACKING_CONDITION_ID = $resultArr_kinds['GEM Component Tracking Data'] ;

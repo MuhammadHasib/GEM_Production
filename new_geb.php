@@ -55,6 +55,46 @@
 <?php
 include "head.php";
 ?>
+<style>
+    .scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+    /* Flashing */
+    .hover13 a:hover img {
+        opacity: 1;
+        -webkit-animation: flash 1.5s;
+        animation: flash 1.5s;
+        border: 1px inset;
+    }
+    @-webkit-keyframes flash {
+        0% {
+            opacity: .4;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes flash {
+        0% {
+            opacity: .4;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+
+    .rellists{
+        display: none;
+    }
+
+    .rellists .dropdown{
+        margin: 15px;
+    }
+
+</style>
 
 <?php
 //$serial_num_of_newest_part = get_part_ID($GEB_KIND_OF_PART_ID);

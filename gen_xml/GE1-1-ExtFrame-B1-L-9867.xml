@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ROOT>
+  <PARTS>
+    <PART>
+      <SERIAL_NUMBER>GE1/1-ExtFrame-B1-L-9867</SERIAL_NUMBER>
+      <NAME_LABEL>GE1/1-ExtFrame-B1-L-9867</NAME_LABEL>
+      <LOCATION>BARI</LOCATION>
+      <BARCODE>vvvvvv</BARCODE>
+      <KIND_OF_PART>GEM External Frame</KIND_OF_PART>
+      <MANUFACTURER>CERN MPT</MANUFACTURER>
+    </PART>
+  </PARTS>
+</ROOT>

@@ -104,7 +104,8 @@ VFAT_POSN
 DET_STRIP
 VFAT_CHAN
 CONN_PIN-->
-                            <button type="submit" class="btn btn-default btn-lg subbutt_gen">Search</button>
+                            <!--<button type="submit" class="btn btn-default btn-lg subbutt_gen">Search</button>-->
+                            <button type="submit" class="btn btn-default btn-lg subbutt_gen"disabled="true" >Search</button>
                         </form>
                     </div>
                 </div>

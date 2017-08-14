@@ -271,10 +271,12 @@ function SendXML($LocalFilePATH) {
 
 //CURL
     $username = $_SESSION['user'];
-    $password = "kucr3PREruVUchAwEc";
+    //$password = "kucr3PREruVUchAwEc";
+    $password = "y9ucrou0oubra";
 //    $target_url = "http://gem-machine-a.cern.ch/cmsdbldr/gem/int2r";
 //    $target_url = "http://gem-machine-b.cern.ch/cmsdbldr/gem/int2r";
-    $target_url = "http://cmsgem.cern.ch/gem/cmsdbldr";
+    //$target_url = "http://cmsgem.cern.ch/gem/cmsdbldr";
+    $target_url = "http://cmsgem.cern.ch/gem/cmsdbldr/gem/omds";
      
      
 
@@ -305,6 +307,71 @@ function SendXML($LocalFilePATH) {
 //    else{
 //        echo '</br><span class="label label-warning"> <b>Status code:</b>'.$status_code.'</span> ';
 //        echo '<hr><div class="alert alert-warning" role="alert"><b>Execution return:</b>'.$return.'</div>';
+//    }
+    $res_arr['statuscode'] = $status_code;
+    $res_arr['return'] = $return;
+    
+    curl_close($ch);
+    return $res_arr;
+    
+}
+function SendXML2($LocalFilePATH) {
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+//CURL
+    $username = $_SESSION['user'];
+    $password = "y9ucrou0oubra";
+    //$target_url = "http://cmsgem.cern.ch/gem/cmsdbldr/gem/omds";
+    $target_url = "test/";
+
+    $file_name_with_full_path = realpath($LocalFilePATH);
+    $post = array('file' => '@' . $file_name_with_full_path);
+
+    $ch = curl_init($target_url);
+    curl_setopt($ch, CURLOPT_URL, $target_url);
+    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 120);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $return = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    //Printing Status Code and execution return 
+    $res_arr = array();
+//    }
+    $res_arr['statuscode'] = $status_code;
+    $res_arr['return'] = $return;
+    
+    curl_close($ch);
+    return $res_arr;
+    
+}
+function SendXML3($LocalFilePATH) {
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+//CURL
+    $username = $_SESSION['user'];
+    $password = "y9ucrou0oubra";
+    $target_url = "test/";
+
+    $file_name_with_full_path = realpath($LocalFilePATH);
+    $post = array('file' => '@' . $file_name_with_full_path);
+
+    $ch = curl_init($target_url);
+    curl_setopt($ch, CURLOPT_URL, $target_url);
+    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 120);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $return = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    //Printing Status Code and execution return 
+    $res_arr = array();
 //    }
     $res_arr['statuscode'] = $status_code;
     $res_arr['return'] = $return;
