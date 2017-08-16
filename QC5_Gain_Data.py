@@ -66,7 +66,7 @@ def xml_from_excel5(excel_file):
 	expo3 = sh.cell(51,5).value
 	expo4 = sh.cell(52,5).value
 	rate1 = sh.cell(53,5).value
-	root = generateXMLHeader("QC5_EFF_GAIN_CONFIG","GEM Chamber QC5 Effective Gain Config",str(location) + "GEM Chamber QC5 Effective Gain",Run,Start,Stop,comment,location,user)
+	root = generateXMLHeader("QC5_EFF_GAIN_CONFIG","GEM Chamber QC5 Effective Gain Config",str(location) + " GEM Chamber QC5 Effective Gain",Run,Start,Stop,comment,location,user)
 	dataSet = generateDataSet(root,Comment,"1","GEM Chamber",chamber)
 	generateXMLData5a(dataSet,str(user),pre,str(amp),str(coa), str(fine), str(itime),str(dtime),str(disc),str(thrs),str(walk),str(width),str(scal),str(daq),str(pico),str(tred),str(tblack),str(tgreen),str(source),str(hvlt),str(current),str(nbpri),str(eta),str(gas),str(gfac),str(flow),str(req),str(divi))
 	writeToFile(fileName, tostring(root))
