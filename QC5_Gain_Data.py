@@ -2,23 +2,19 @@
 from datetime import datetime,date,time
 from time import sleep
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
-import serial
+#import serial
 import time
 import xlrd
 from xlrd import xldate
 import re
 import sys
-import statistics
+#import statistics
 from xmlConversion import generateXMLHeader, generateDataSet, writeToFile,writeToFile1
 from xmlConversion import generateXMLDatafastamb,generateXMLDatafast,generateXMLDatalongamb,generateXMLDatalong, generateXMLData3,generateXMLData3a,generateXMLData4,generateXMLData4a,generateXMLData5a,generateXMLData5,generateXMLData4s, generateXMLData5s
-from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine, MetaData, Table, and_
-from sqlalchemy.sql import select
-#import cx_Oracle
-
-#con = cx_Oracle.connect('CMS_COND_GENERAL_R/p3105rof@cms_omds_adg')
-#cur = con.cursor()
+#from flask import Flask, render_template
+#from flask_sqlalchemy import SQLAlchemy
+#from sqlalchemy import create_engine, MetaData, Table, and_
+#from sqlalchemy.sql import select
 
 
 #QC5
@@ -70,7 +66,7 @@ def xml_from_excel5(excel_file):
 	expo3 = sh.cell(51,5).value
 	expo4 = sh.cell(52,5).value
 	rate1 = sh.cell(53,5).value
-	root = generateXMLHeader("QC5_EFF_GAIN_CONFIG","GEM Chamber QC5 Effective Gain Config","BGEM Chamber QC5 Effective Gain",Run,Start,Stop,comment,location,user)
+	root = generateXMLHeader("QC5_EFF_GAIN_CONFIG","GEM Chamber QC5 Effective Gain Config",str(location) + "GEM Chamber QC5 Effective Gain",Run,Start,Stop,comment,location,user)
 	dataSet = generateDataSet(root,Comment,"1","GEM Chamber",chamber)
 	generateXMLData5a(dataSet,str(user),pre,str(amp),str(coa), str(fine), str(itime),str(dtime),str(disc),str(thrs),str(walk),str(width),str(scal),str(daq),str(pico),str(tred),str(tblack),str(tgreen),str(source),str(hvlt),str(current),str(nbpri),str(eta),str(gas),str(gfac),str(flow),str(req),str(divi))
 	writeToFile(fileName, tostring(root))
