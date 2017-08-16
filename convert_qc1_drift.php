@@ -37,13 +37,12 @@ if (!$FileTmp){
   include "head.php";
   ?>
 <?php
-$out = shell_exec("python QC5_test.py '$CHAMBER' " );
+$out = shell_exec("python QC1_test.py '$CHAMBER' " );
 $outs = trim($out);
 //$test=null;
-$output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC5_Gain_Data.py '$FileName' '$CHAMBER' $outs '$LOCATION' '$INITIATED_BY_USER' '$COMMENT_DESCRIPTION' '$RUN_BEGIN_TIMESTAMP' '$RUN_END_TIMESTAMP' '$Elog' '$Files' '$comments'");
+$output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC1_drift_Data.py '$FileName' '$CHAMBER' $outs '$LOCATION' '$INITIATED_BY_USER' '$COMMENT_DESCRIPTION' '$RUN_BEGIN_TIMESTAMP' '$RUN_END_TIMESTAMP' '$Elog' '$Files' '$comments'");
 
 //$LocalFilePATH =  $FileName .=".xml";
-//$LocalFilePATH  = "archive-2017-08-01.zip";
 $LocalFilePATH_2 =  $FileName .="_Data.xml";
 //$LocalFilePATH_3 =  $FileName .="_summry.xml";
 //$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
