@@ -42,22 +42,16 @@ $outs = trim($out);
 //$test=null;
 $output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC1_drift_Data.py '$FileName' '$CHAMBER' $outs '$LOCATION' '$INITIATED_BY_USER' '$COMMENT_DESCRIPTION' '$RUN_BEGIN_TIMESTAMP' '$RUN_END_TIMESTAMP' '$Elog' '$Files' '$comments'");
 
-//$LocalFilePATH =  $FileName .=".xml";
+$LocalFilePATH =  $FileName .=".xml";
 $LocalFilePATH_2 =  $FileName .="_Data.xml";
-//$LocalFilePATH_3 =  $FileName .="_summry.xml";
-//$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
+$LocalFilePATH_3 =  $FileName .="_summry.xml";
+$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
 //echo $check;
+
 // Send the file to the spool area
-$res_arr = SendXML($LocalFilePATH_2);
 //$res_arr = SendXML($check);
 //echo $res_arr;
-//$res_arr_2 = SendXML($LocalFilePATH_2);
-//echo $res_arr_2;
-//$res_arr_3 = SendXML($LocalFilePATH_3);
-//echo $res_arr_3;
 echo var_dump($res_arr) ;
-//echo var_dump($res_arr_2) ;
-//echo var_dump($res_arr_3) ;
 
 }
 ?>
@@ -86,8 +80,6 @@ $dir= getcwd();
 //echo $dir;
 unlinkr ($dir, "*.xml");
 unlinkr ($dir, "*.zip");
-//unlink ($LocalFilePATH_2);
-//unlink ($LocalFilePATH_3);
 ?>
 <//?php include "side.php"; ?>
 <?php
