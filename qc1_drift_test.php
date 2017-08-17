@@ -66,7 +66,7 @@
     <strong>Well done!</strong> You successfully generated XML file for a list of GEM FOIL(s) data 
 		  </div>';
 		  // redirect to confirm page
-		  header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+		  header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
 		      die();
 		 
 	  }
@@ -133,7 +133,7 @@ include "head.php";
 	      ?>
 
 	      <!--<form method="POST" action="qc3_leak_test.php" enctype='multipart/form-data'>-->
-	      <form method="POST" action="convert_qc2_fast.php" enctype='multipart/form-data'>
+	      <form method="POST" action="convert_qc1_drift.php" enctype='multipart/form-data'>
 			<input type="hidden" name="submited" value="true" /><br>
 		  <div class="row">
 		      <div class="col-xs-6 panel-info panel" style="padding-left: 0px; padding-right: 0px;">

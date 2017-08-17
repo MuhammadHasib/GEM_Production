@@ -5,9 +5,10 @@ include_once "functions/functions.php";
 include_once "functions/generate_xml.php";
 include_once "functions/globals.php";
 include_once "functions/generate_xml.php";
+
 $conn = database_connection();
 //if(isset($_FILES["file"])){
-$CHAMBER= $_POST['CHAMBER'];
+$CHAMBER= $_POST['foil'];
 $RUN_NUMBER = $_POST['RUN_NUMBER'];
 $RUN_TYPE = $_POST['RUN_TYPE'];
 $RUN_BEGIN_TIMESTAMP = date($_POST['RUN_BEGIN_TIMESTAMP'].':s');
@@ -24,54 +25,66 @@ $FileTmp= $_FILES['file']['tmp_name'];
 $FileType= $_FILES['file']['type'];
 $FileSize= $_FILES['file']['size'];
 $FileError=$_FILES['file']['error'];
-//echo var_dump($_POST);
-//echo "<div align='center'>File is Invalid</div>";
-//echo "<div align='center'>Data is loaded into DB for chamber $CHAMBER</div>";
+echo var_dump($_POST);
+
 if (($FileSize > 2000000)){
-	die("Error - File is too Long");
+        die("Error - File is too Long");
 }
 if (!$FileTmp){
-	die("No File Selected, Please Upload Again");
+        die("No File Selected, Please Upload Again");
 }else{
-	move_uploaded_file($FileTmp,"$FileName");
+        move_uploaded_file($FileTmp,"$FileName");
 }
 ?>
 <?php
   include "head.php";
   ?>
 <?php
-$out = shell_exec("python QC4_test.py '$CHAMBER' " );
+$out = shell_exec("python QC2_test.py '$CHAMBER' " );
 $outs = trim($out);
 //$test=null;
-$output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC4_HV_Data.py $FileName '$CHAMBER' $outs $LOCATION $INITIATED_BY_USER '$COMMENT_DESCRIPTION' '$RUN_BEGIN_TIMESTAMP' '$RUN_END_TIMESTAMP' '$Elog' '$Files' '$comments'");
+$output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC2_Fast_Data.py $FileName $outs $LOCATION $INITIATED_BY_USER '$COMMENT_DESCRIPTION' '$RUN_BEGIN_TIMESTAMP' '$RUN_END_TIMESTAMP'  '$comments' '$CHAMBER'");
+
 
 $LocalFilePATH =  $FileName .=".xml";
 $LocalFilePATH_2 =  $FileName .="_Data.xml";
 $LocalFilePATH_3 =  $FileName .="_summry.xml";
-//echo $LocalFilePATH;
-// Send the file to the spool area
-$res_arr = SendXML($LocalFilePATH);
-$res_arr_2 = SendXML($LocalFilePATH_2);
-$res_arr_3 = SendXML($LocalFilePATH_3);
-echo var_dump($res_arr) ;
-echo var_dump($res_arr_2) ;
-echo var_dump($res_arr_3) ;
-//return $res_arr;
+$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
+//echo $check;
 
-// Set session variables with the return 
-                    //session_start() ;
-                    //$_SESSION['post_return'] = $res_arr;
-                    //$_SESSION['post_return'] = $res_arr_2;
-                    //$_SESSION['post_return'] = $res_arr_3;
-                    //$_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
-      //<strong>Well done!</strong> You successfully generated XML file for a list of GEM FOIL(s) data 
-        //            </div>';
-         //           // redirect to confirm page
-          //         header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
-            //            die();
+// Send the file to the spool area
+//$res_arr = SendXML($check);
+//echo $res_arr;
+echo var_dump($res_arr) ;
+
 }
 ?>
+<?php
+function unlinkr($dir, $pattern = "*") {
+    // find all files and folders matching pattern
+    $files = glob($dir . "/$pattern"); 
 
+    //interate thorugh the files and folders
+    foreach($files as $file){ 
+    //if it is a directory then re-call unlinkr function to delete files inside this directory     
+        if (is_dir($file) and !in_array($file, array('..', '.')))  {
+            echo "<p>opening directory $file </p>";
+            unlinkr($file, $pattern);
+            //remove the directory itself
+            echo "<p> deleting directory $file </p>";
+            rmdir($file);
+        } else if(is_file($file) and ($file != __FILE__)) {
+            // make sure you don't delete the current script
+            echo "<p>deleting file $file </p>";
+            unlink($file); 
+        }
+    }
+}
+$dir= getcwd();
+//echo $dir;
+unlinkr ($dir, "*.xml");
+unlinkr ($dir, "*.zip");
+?>
 <//?php include "side.php"; ?>
 <?php
  include "foot.php";
