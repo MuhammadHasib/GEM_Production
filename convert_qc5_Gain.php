@@ -37,9 +37,6 @@ if (!$FileTmp){
   include "head.php";
   ?>
 <?php
-$out = shell_exec("python test.py $CHAMBER " );
-?>
-<?php
 $out = shell_exec("python QC5_test.py '$CHAMBER' " );
 $outs = trim($out);
 $output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC5_Gain_Data.py '$FileName' '$CHAMBER' $outs '$LOCATION' '$INITIATED_BY_USER' '$COMMENT_DESCRIPTION' '$RUN_BEGIN_TIMESTAMP' '$RUN_END_TIMESTAMP' '$Elog' '$Files' '$comments'");
