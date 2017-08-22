@@ -24,6 +24,9 @@ $FileTmp= $_FILES['file']['tmp_name'];
 $FileType= $_FILES['file']['type'];
 $FileSize= $_FILES['file']['size'];
 $FileError=$_FILES['file']['error'];
+//echo var_dump($_POST);
+//echo "<div align='center'>File is Invalid</div>";
+//echo "<div align='center'>Data is loaded into DB for chamber $CHAMBER</div>";
 if (($FileSize > 2000000)){
 	die("Error - File is too Long");
 }
@@ -39,19 +42,26 @@ if (!$FileTmp){
 <?php
 $out = shell_exec("python QC5_test.py '$CHAMBER' " );
 $outs = trim($out);
-$output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC5_Gain_Data.py '$FileName' '$CHAMBER' $outs '$LOCATION' '$INITIATED_BY_USER' '$COMMENT_DESCRIPTION' '$RUN_BEGIN_TIMESTAMP' '$RUN_END_TIMESTAMP' '$Elog' '$Files' '$comments'");
+//$test=null;
+$output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC5_Gain_Data.py $FileName '$CHAMBER' $outs '$LOCATION' '$INITIATED_BY_USER' '$COMMENT_DESCRIPTION' '$RUN_BEGIN_TIMESTAMP' '$RUN_END_TIMESTAMP' '$Elog' '$Files' '$comments'");
 
 $LocalFilePATH =  $FileName .=".xml";
 $LocalFilePATH_2 =  $FileName .="_Data.xml";
 $LocalFilePATH_3 =  $FileName .="_summry.xml";
-$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
-echo $check;
+//$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
+//echo $check;
 
 // Send the file to the spool area
 //$res_arr = SendXML($check);
 //echo $res_arr;
 //echo var_dump($res_arr) ;
+//echo var_dump($check) ;
 
+
+// Send the file to the spool area
+//$res_arr = SendXML($LocalFilePATH);
+//echo var_dump($res_arr) ;
+//return $res_arr;
 }
 ?>
 <?php
@@ -77,8 +87,8 @@ function unlinkr($dir, $pattern = "*") {
 }
 $dir= getcwd();
 //echo $dir;
-//unlinkr ($dir, "*.xml");
-//unlinkr ($dir, "*.zip");
+unlinkr ($dir, "*.xml");
+unlinkr ($dir, "*.zip");
 ?>
 <//?php include "side.php"; ?>
 <?php

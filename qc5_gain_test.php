@@ -66,7 +66,7 @@
     <strong>Well done!</strong> You successfully generated XML file for a list of GEM FOIL(s) data 
 		  </div>';
 		  // redirect to confirm page
-		  header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+		  header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
 		      die();
 		 
 	  }
@@ -138,54 +138,26 @@ include "head.php";
 		  <div class="row">
 		      <div class="col-xs-6 panel-info panel" style="padding-left: 0px; padding-right: 0px;">
 			  <div class="panel-heading">
-			      <h3 class="panel-title" >  <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>On which Drift test performed?</h3>
-			  </div>
-			  <div class="panel-body">
-		<div style="white-space:nowrap">
-                                                        <label for="exampleInputFile">Related DRIFT: </label>
-                                                        <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-                                                        <input class="foilinput foil<?= $i ?>" name="foil<?= $i ?>" value="" ><br>
-                                                        <!--multiple=""-->
-                                                        <select tabindex="-1"  class="chosen-select-foil-<?= $i ?>" style="" data-placeholder="Choose DRIFT">
-                                                            <option value=""></option>
-                                                            <optgroup label="Foil">
-                                                                <?php
-                                                                //$arr = list_chambers($DRIFT_KIND_OF_PART_ID);
-                                                                $arr = get_available_parts_nohtml($CHAMBER_KIND_OF_PART_ID);
-                                                                foreach ($arr as $value) {
-                                                                    echo "<option>" . $value['SERIAL_NUMBER'] . "</option>";
-                                                                }
-                                                                ?>
-
-                                                            </optgroup>
-                                                        </select>
-	     <!-- <form method="POST" action="convert_qc5_Gain.php" enctype='multipart/form-data'>
-			<input type="hidden" name="submited" value="true" /><br>
-		  <div class="row">
-		      <div class="col-xs-6 panel-info panel" style="padding-left: 0px; padding-right: 0px;">
-			  <div class="panel-heading">
 			      <h3 class="panel-title" >  <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>On which chamber test performed?</h3>
 			  </div>
 			  <div class="panel-body">
 		   <div class="form-group">
 		       <label for="exampleInputEmail1">Choose Chamber:&nbsp;</label>
-			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		      <!-- <p class="help-block">help text here.</p>--> 
 		       <!--<input name="chamber1Id" &nbsp value=""  >-->
 		       <!--<input class="runinput" name="CHAMBER" &amp; value="" hidden >-->
-		      <!-- <input class="foils" href="#" name="CHAMBER" value="" /> 
-		       <//input class="foils" href="#" value="" /> 
+		       <input class="foils" href="#" name="CHAMBER" value="" /> 
 			<div class="dropdown"  scrollable-menu>
 			   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"     aria-haspopup="true" aria-expanded="true">
 			       Chamber
 			       <span class="caret"></span>
 			   </button>
 			   <ul class="dropdown-menu scrollable-menu"  aria-labelledby="dropdownMenu1">
-			      <//?php htmlentities(stripslashes(utf8_decode (list_chambers()))); ?>
-			      <?php list_chambers($DRIFT_KIND_OF_PART_ID); ?>
+			      <?php htmlentities(stripslashes(utf8_decode (list_chambers()))); ?>
 			      <//?php get_locations(); ?>
 			  </ul>
-		       </div>-->
+		       </div>
 			<div class="panel-body">
 				     <!-- <div class="form-group">
 				      <lable>RUN Number:</lable><br>
@@ -214,7 +186,7 @@ include "head.php";
 				      <div class="form-group">
 				      <lable>Location:</lable><br>
 				       <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-				     <input class="runinput" name="LOCATION" value=""  > 
+				     <input class="runinput" name="LOCATION" value=""  hidden> 
 				      <div class="dropdown" scrollable-menu>
 					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 					      Choose Location
@@ -283,7 +255,7 @@ include "head.php";
 
 
 
-		  <button type="submited" class="btn btn-default subbutt">Submit</button>   
+		  <button type="submit" class="btn btn-default subbutt">Submit</button>   
 
 
 
@@ -314,17 +286,3 @@ include "foot.php";
 });
     });
 </script>
-<script type="text/javascript" language="javascript">
-function checkfile(sender) {
-    var validExts = new Array(".xlsx", ".xls");
-    var fileExt = sender.value;
-    fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
-    if (validExts.indexOf(fileExt) < 0) {
-      alert("Invalid file selected, valid files are of " +
-               validExts.toString() + " types.");
-      return false;
-    }
-    else return true;
-}
-</script>
- 
