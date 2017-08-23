@@ -2,6 +2,7 @@
 <?php
 include "head.php";
 ?>
+<?php include "head_panel.php"; ?>
 
 
 <ul class="list-group">

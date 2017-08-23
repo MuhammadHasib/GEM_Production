@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ROOT>
+  <PARTS>
+    <PART>
+      <SERIAL_NUMBER>GEB-RO-L-0987</SERIAL_NUMBER>
+      <NAME_LABEL>GEB-RO-L-0987</NAME_LABEL>
+      <LOCATION>CERN</LOCATION>
+      <BARCODE>09877</BARCODE>
+      <KIND_OF_PART>GEM Electronics Board</KIND_OF_PART>
+      <MANUFACTURER>Eltos</MANUFACTURER>
+    </PART>
+  </PARTS>
+</ROOT>

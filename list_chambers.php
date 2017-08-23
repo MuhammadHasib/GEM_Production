@@ -4,6 +4,7 @@ include "head.php";
 
 
 ?>
+<?php include "head_panel.php"; ?>
 
 
     <div class="container-fluid">

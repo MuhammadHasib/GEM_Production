@@ -1,4 +1,8 @@
-  <?php
+<?php
+include "head.php";
+?>
+  
+<?php
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 if (isset($_POST['serial'])) {
@@ -27,10 +31,10 @@
                         $temp[$KIND_OF_PART] = $kindOfPart;
                     
                     
-                    if (isset($logName)) {
+                    //if (isset($logName)) {
                         //echo $logName;
                         $temp[$RECORD_INSERTION_USER] = $logName;
-                    }
+                    //}
                   
                     if (isset($_POST['manufacturer']) && !empty($_POST['manufacturer'])) {
                         //echo $_POST['manufacturer'];
@@ -41,20 +45,21 @@
                     $res_arr = generateXml($arr);
                     
                     // Set session variables with the return 
-                    session_start() ;
+                    //session_start() ;
                     $_SESSION['post_return'] = $res_arr;
                     $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully created XML file for OptoHybrid <strong>ID:</strong> ' . $_POST['serial'] .
                     '</div>';
                     // redirect to confirm page
-                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                    header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
                         die();
                 }
             } else {
                 ?>
-<?php
+<//?php
 include "head.php";
 ?>
+<?php include "head_panel.php"; ?>
 
 <?php
 $serial_num_of_newest_part = get_part_ID($OPTOHYBRID_KIND_OF_PART_ID);

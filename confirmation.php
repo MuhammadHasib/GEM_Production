@@ -5,7 +5,6 @@ include "head.php";
 
 ?>
 
-
     <div class="container-fluid">
       <div class="row">
         
@@ -50,6 +49,8 @@ if(isset($_SESSION['post_return']) && isset($_SESSION['new_chamber_ntfy'])){
     </div>
 
 
+
+<?php include "head_panel.php"; ?>
 
   <?php 
 include "foot.php";

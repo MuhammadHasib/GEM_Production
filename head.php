@@ -14,6 +14,7 @@ if(isset($_GET['dev']))
 /******************************/
 //print_r($_SERVER);
 $logName = $_SERVER['ADFS_LOGIN'];
+//echo $logName;
 //$pieces = (explode("\\",$name));
 //$logName = $pieces[1];
 
@@ -37,7 +38,7 @@ $headers = array(
 
         $url = 'https://winservices-soap.web.cern.ch/winservices-soap/Generic/Authentication.asmx/GetUserInfoFromLogin';
 $data = array('UserName' => $logName);
-
+//echo $data;
 // use key 'http' even if you send the request to https://...
 $options = array(
     'http' => array(
@@ -55,11 +56,13 @@ $xml = simplexml_load_string($result);
 
 //print_r($xml);
 $userInfo = (array)$xml;
+//echo $userInfo;
 session_start();
 $_SESSION['user'] = $userInfo['login'];
+
 //print_r($userInfo);
 //print_r($data);
-//echo $userInfo['name'];
+echo $userInfo['name'];
 /*****************************************/
 /******* End Get user Information ********/
 /*****************************************/
@@ -140,7 +143,8 @@ vertical-align:text-center; border-radius: 25px; margin-top: -8px;">  GEM Detect
           </form> 
             
           <ul class="nav navbar-nav navbar-right">
-            <li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, <?php echo $userInfo['name'];?></a></li>
+            <!--<li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, <?php echo $userInfo['name'];?></a></li>-->
+            <li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, <?php echo $logName;?></a></li>
             <li><a href="first.php">Dashboard</a></li>
             <!-- <li><a href="#">Settings</a></li> -->
             <!--  <li><a href="profile.php">Profile</a></li> -->
@@ -151,4 +155,4 @@ vertical-align:text-center; border-radius: 25px; margin-top: -8px;">  GEM Detect
         </div>
       </div>
     </nav>
-<?php include "head_panel.php"; ?>
+<//?php include "head_panel.php"; ?>

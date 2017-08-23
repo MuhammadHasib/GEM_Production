@@ -1,4 +1,8 @@
- <?php
+<?php
+include "head.php";
+?>
+ 
+<?php
             //  Form Submitted , need to generate XML 
             if (isset($_POST['foilsnumbersubmitted'])) {
                 include_once "functions/functions.php";
@@ -55,7 +59,7 @@
                    $res_arr = generateDatasetXml($data);
                     
                     // Set session variables with the return 
-                    session_start() ;
+                    //session_start() ;
                     $_SESSION['post_return'] = $res_arr;
                     $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully generated XML file for a list of GEM FOIL(s) data 
@@ -66,9 +70,10 @@
                    
             }
             ?>
-<?php
+<//?php
 include "head.php";
 ?>
+<?php include "head_panel.php"; ?>
 
 
 <div class="container-fluid">

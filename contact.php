@@ -4,6 +4,8 @@ include "head.php";
 
 
 ?>
+<?php include "head_panel.php"; ?>
+
 <?php
 	if (isset($_POST["submit"])) {
 		$name = $_POST['name'];
