@@ -36,6 +36,7 @@ if (!$FileTmp){
 <?php
   include "head.php";
   ?>
+<?php include "head_panel.php"; ?>
 <?php
 $out = shell_exec("python QC5_test.py '$CHAMBER' " );
 $outs = trim($out);

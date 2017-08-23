@@ -1,3 +1,7 @@
+
+<?php
+include "head.php";
+?>
 <?php
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     include_once "functions/functions.php";
@@ -25,11 +29,14 @@
                         //echo  $kindOfPart;
                         $temp[$KIND_OF_PART] = $kindOfPart;
                     
-                    
-                    if (isset($logName)) {
-                        //echo $logName;
-                        $temp[$RECORD_INSERTION_USER] = $logName;
-                    }
+                   	//echo $logName;
+	  	        $temp[$RECORD_INSERTION_USER] = $logName;
+ 
+                    //if (isset($logName)) {
+                      //  echo $logName;
+                      //  $temp[$RECORD_INSERTION_USER] = $logName;
+                        //$temp[$RECORD_INSERTION_USER] = $logName;
+                    //}
                   
                     if (isset($_POST['manufacturer']) && !empty($_POST['manufacturer'])) {
                         //echo $_POST['manufacturer'];
@@ -40,18 +47,19 @@
                     $res_arr = generateXml($arr);
                     
                     // Set session variables with the return 
-                    session_start() ;
+                    //session_start() ;
                     $_SESSION['post_return'] = $res_arr;
                     $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully created XML file for GEM PCB Readout <strong>ID:</strong> ' . $_POST['serial'] .
                     '</div>';
                     // redirect to confirm page
-                    header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
                         die();
                 }
             } else {
                 ?>
-<?php
+<?php include "head_panel.php"; ?>
+<//?php
 include "head.php";
 ?>
 <style>
@@ -138,7 +146,7 @@ include "head.php";
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="float: left;">Serial Number:&nbsp;</label>
                                     <!--<div class="serial"><span class="name">PCB-RO-VII-B<span class="batch">1</span>-</span><span id="vers" class="version" >VERSION</span><span class="id">-XXXX</span></div>-->
-                                    <div class="serial"><span class="name">PCB-VIII-RO<span class="batch"></span>-</span><span id="vers" class="version" >VERSION</span><span class="id">-XXXX</span></div>
+                                    <div class="serial"><span class="name">PCB-VIII-RO-B<span class="batch"></span>-</span><span id="vers" class="version" >VERSION</span><span class="id">-XXXX</span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -153,7 +161,7 @@ include "head.php";
                                             <li><a href="#">Short</a></li>
                                         </ul>
                                     </div><br>
-                                <!--    <div class="dropdown" scrollable-menu>
+                                    <div class="dropdown" scrollable-menu>
                                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             Choose Batch Number
                                             <span class="caret"></span>
@@ -190,8 +198,28 @@ include "head.php";
                                             <li><a href="#" class="batchnum">28</a></li>
                                             <li><a href="#" class="batchnum">29</a></li>
                                             <li><a href="#" class="batchnum">30</a></li>
+                                            <li><a href="#" class="batchnum">31</a></li>
+                                            <li><a href="#" class="batchnum">32</a></li>
+                                            <li><a href="#" class="batchnum">33</a></li>
+                                            <li><a href="#" class="batchnum">34</a></li>
+                                            <li><a href="#" class="batchnum">35</a></li>
+                                            <li><a href="#" class="batchnum">36</a></li>
+                                            <li><a href="#" class="batchnum">37</a></li>
+                                            <li><a href="#" class="batchnum">38</a></li>
+                                            <li><a href="#" class="batchnum">39</a></li>
+                                            <li><a href="#" class="batchnum">40</a></li>
+                                            <li><a href="#" class="batchnum">41</a></li>
+                                            <li><a href="#" class="batchnum">42</a></li>
+                                            <li><a href="#" class="batchnum">43</a></li>
+                                            <li><a href="#" class="batchnum">44</a></li>
+                                            <li><a href="#" class="batchnum">45</a></li>
+                                            <li><a href="#" class="batchnum">46</a></li>
+                                            <li><a href="#" class="batchnum">47</a></li>
+                                            <li><a href="#" class="batchnum">48</a></li>
+                                            <li><a href="#" class="batchnum">49</a></li>
+                                            <li><a href="#" class="batchnum">50</a></li>
                                         </ul>
-                                    </div><br>-->
+                                    </div><br>
                                     <div class="dropdown">&nbsp;<b style=" color: red">*</b>
                                     <label> 4 digits Serial </label><br>
                                     <input placeholder="XXXX" class="serialValidation">
