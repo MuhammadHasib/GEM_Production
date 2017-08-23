@@ -47,7 +47,7 @@
                     $_SESSION['post_return'] = $res_arr;
                     $_SESSION['new_chamber_ntfy'] = $msg;
                     // redirect to confirm page
-                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                    header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
                         die();
                 }
             } else {
@@ -57,6 +57,7 @@ include "head.php";
 
 
 ?>
+<?php include "head_panel.php"; ?>
 
 
     <div class="container-fluid">

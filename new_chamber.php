@@ -1,3 +1,4 @@
+<?php include "head.php"?> 
 <?php
 
            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -32,11 +33,11 @@
                     //echo  $kindOfPart;
                     $temp[$KIND_OF_PART] = $kindOfPart;
 
-
-                    if (isset($logName)) {
+			$temp[$RECORD_INSERTION_USER] = $logName;
+                    //if (isset($logName)) {
                         //echo $logName;
-                        $temp[$RECORD_INSERTION_USER] = $logName;
-                    }
+                      //  $temp[$RECORD_INSERTION_USER] = $logName;
+                   // }
 
                     if (isset($_POST['manufacturer']) && !empty($_POST['manufacturer']) ) {
                         //echo $_POST['manufacturer'];
@@ -136,7 +137,7 @@
                     $res_arr = generateXml($arr);
                     
                     // Set session variables with the return 
-                    session_start() ;
+                   // session_start() ;
                     $_SESSION['post_return'] = $res_arr;
                     $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
       <strong>Well done!</strong> You successfully created GEM Chamber XML file <strong>ID:</strong> ' . $_POST['serial'] .
@@ -149,8 +150,9 @@
                 }
             }
 
-include "head.php";
+//include "head.php";
 ?>
+<?php include "head_panel.php"; ?>
 <style>
     .scrollable-menu {
     height: auto;
