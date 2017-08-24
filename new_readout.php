@@ -53,7 +53,7 @@ include "head.php";
       <strong>Well done!</strong> You successfully created XML file for GEM PCB Readout <strong>ID:</strong> ' . $_POST['serial'] .
                     '</div>';
                     // redirect to confirm page
-                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                    header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
                         die();
                 }
             } else {
