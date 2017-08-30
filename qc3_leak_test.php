@@ -75,6 +75,7 @@
 <?php
 include "head.php";
 ?>
+<?php include "head_panel.php"; ?>
 
 <style>
     .scrollable-menu {

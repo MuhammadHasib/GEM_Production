@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<ROOT>
+  <PARTS>
+    <PART>
+      <BARCODE>CMS-GEM-ROOT</BARCODE>
+      <CHILDREN>
+        <PART>
+          <SERIAL_NUMBER>0xfe33</SERIAL_NUMBER>
+          <KIND_OF_PART>GEM VFAT2</KIND_OF_PART>
+        </PART>
+      </CHILDREN>
+    </PART>
+  </PARTS>
+</ROOT>
