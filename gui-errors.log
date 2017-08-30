@@ -1881,3 +1881,113 @@ request due to maintenance downtime or capacity
 problems. Please try again later.</p>
 </body></html>
 >>>>>>> master_v1
+503 - <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>503 Service Temporarily Unavailable</title>
+</head><body>
+<h1>Service Temporarily Unavailable</h1>
+<p>The server is temporarily unable to service your
+request due to maintenance downtime or capacity
+problems. Please try again later.</p>
+</body></html>
+503 - <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>503 Service Temporarily Unavailable</title>
+</head><body>
+<h1>Service Temporarily Unavailable</h1>
+<p>The server is temporarily unable to service your
+request due to maintenance downtime or capacity
+problems. Please try again later.</p>
+</body></html>
+503 - <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>503 Service Temporarily Unavailable</title>
+</head><body>
+<h1>Service Temporarily Unavailable</h1>
+<p>The server is temporarily unable to service your
+request due to maintenance downtime or capacity
+problems. Please try again later.</p>
+</body></html>
+503 - <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>503 Service Temporarily Unavailable</title>
+</head><body>
+<h1>Service Temporarily Unavailable</h1>
+<p>The server is temporarily unable to service your
+request due to maintenance downtime or capacity
+problems. Please try again later.</p>
+</body></html>
+200 - /usr/bin/java
+14:17:39,618  INFO Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+14:17:39,624  INFO Version:41 - HHH000412: Hibernate Core {4.1.7.Final}
+14:17:39,625  INFO Environment:239 - HHH000206: hibernate.properties not found
+14:17:39,626  INFO Environment:342 - HHH000021: Bytecode provider name : javassist
+14:17:39,744  INFO Reflections:229 - Reflections took 92 ms to scan 1 urls, producing 16 keys and 111 values 
+14:17:39,829  INFO Reflections:229 - Reflections took 78 ms to scan 1 urls, producing 16 keys and 111 values 
+14:17:39,913  INFO Configuration:1933 - HHH000043: Configuring from resource: /hibernate.cfg.xml
+14:17:39,913  INFO Configuration:1952 - HHH000040: Configuration resource: /hibernate.cfg.xml
+14:17:39,947  WARN DTDEntityResolver:74 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+14:17:39,963  INFO Configuration:2074 - HHH000041: Configured SessionFactory: null
+14:17:40,298  INFO DriverManagerConnectionProviderImpl:96 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+14:17:40,298  INFO DriverManagerConnectionProviderImpl:130 - HHH000115: Hibernate connection pool size: 20
+14:17:40,298  INFO DriverManagerConnectionProviderImpl:133 - HHH000006: Autocommit mode: false
+14:17:40,298  INFO DriverManagerConnectionProviderImpl:147 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@CMS_OMDS_LB]
+14:17:40,299  INFO DriverManagerConnectionProviderImpl:152 - HHH000046: Connection properties: {user=CMS_GEM_PRTTYPE_MUON_WRITER, password=****}
+14:17:40,351  INFO Dialect:125 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+14:17:40,366  INFO TransactionFactoryInitiator:68 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:17:40,368  INFO ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+14:17:40,702  INFO DriverManagerConnectionProviderImpl:96 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+14:17:40,702  INFO DriverManagerConnectionProviderImpl:130 - HHH000115: Hibernate connection pool size: 20
+14:17:40,702  INFO DriverManagerConnectionProviderImpl:133 - HHH000006: Autocommit mode: false
+14:17:40,702  INFO DriverManagerConnectionProviderImpl:147 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@CMS_OMDS_LB]
+14:17:40,703  INFO DriverManagerConnectionProviderImpl:152 - HHH000046: Connection properties: {user=CMS_GEM_PRTTYPE_MUON_WRITER, password=****}
+14:17:40,737  INFO Dialect:125 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+14:17:40,738  INFO TransactionFactoryInitiator:68 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:17:40,739  INFO ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+14:17:40,739  WARN TypeFactory:69 - HHH000233: Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@3c1e3314 after already scoped org.hibernate.internal.SessionFactoryImpl@4b770e40
+14:17:40,984  INFO DbLoader:169 - Processing DataFile(super=FileBase(file=/var/cmsdbldr/work/gem/omds/afs_cern.ch_user_h_hamd_www_prod_gen_xml_GEB-RO-L-4000.xml-M59H1d/afs_cern.ch_user_h_hamd_www_prod_gen_xml_GEB-RO-L-4000.xml), archive=ArchiveFile(super=FileBase(file=/var/cmsdbldr/work/gem/omds/afs_cern.ch_user_h_hamd_www_prod_gen_xml_GEB-RO-L-4000.xml-M59H1d/afs_cern.ch_user_h_hamd_www_prod_gen_xml_GEB-RO-L-4000.xml)))
+14:17:41,158  INFO Configuration:1933 - HHH000043: Configuring from resource: /hibernate.cfg.xml
+14:17:41,159  INFO Configuration:1952 - HHH000040: Configuration resource: /hibernate.cfg.xml
+14:17:41,160  WARN DTDEntityResolver:74 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+14:17:41,163  INFO Configuration:2074 - HHH000041: Configured SessionFactory: null
+14:17:41,246  INFO DriverManagerConnectionProviderImpl:96 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+14:17:41,246  INFO DriverManagerConnectionProviderImpl:130 - HHH000115: Hibernate connection pool size: 20
+14:17:41,246  INFO DriverManagerConnectionProviderImpl:133 - HHH000006: Autocommit mode: false
+14:17:41,247  INFO DriverManagerConnectionProviderImpl:147 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@CMS_OMDS_LB]
+14:17:41,247  INFO DriverManagerConnectionProviderImpl:152 - HHH000046: Connection properties: {user=CMS_GEM_PRTTYPE_MUON_WRITER, password=****}
+14:17:41,281  INFO Dialect:125 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+14:17:41,283  INFO TransactionFactoryInitiator:68 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:17:41,283  INFO ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+14:17:41,371  INFO DriverManagerConnectionProviderImpl:96 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+14:17:41,371  INFO DriverManagerConnectionProviderImpl:130 - HHH000115: Hibernate connection pool size: 20
+14:17:41,371  INFO DriverManagerConnectionProviderImpl:133 - HHH000006: Autocommit mode: false
+14:17:41,371  INFO DriverManagerConnectionProviderImpl:147 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@CMS_OMDS_LB]
+14:17:41,371  INFO DriverManagerConnectionProviderImpl:152 - HHH000046: Connection properties: {user=CMS_GEM_PRTTYPE_MUON_WRITER, password=****}
+14:17:41,405  INFO Dialect:125 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+14:17:41,406  INFO TransactionFactoryInitiator:68 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:17:41,406  INFO ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+14:17:41,407  WARN TypeFactory:69 - HHH000233: Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@5ff2e84b after already scoped org.hibernate.internal.SessionFactoryImpl@74abbb
+14:17:41,603  INFO PartDao:247 - Resolved: org.cern.cms.dbloader.model.managemnt.Location@37ce3644
+14:17:41,720  INFO Reflections:229 - Reflections took 28 ms to scan 1 urls, producing 16 keys and 111 values 
+14:17:41,722  INFO Configuration:1933 - HHH000043: Configuring from resource: /hibernate.cfg.xml
+14:17:41,722  INFO Configuration:1952 - HHH000040: Configuration resource: /hibernate.cfg.xml
+14:17:41,724  WARN DTDEntityResolver:74 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+14:17:41,726  INFO Configuration:2074 - HHH000041: Configured SessionFactory: null
+14:17:41,791  INFO DriverManagerConnectionProviderImpl:96 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+14:17:41,792  INFO DriverManagerConnectionProviderImpl:130 - HHH000115: Hibernate connection pool size: 20
+14:17:41,792  INFO DriverManagerConnectionProviderImpl:133 - HHH000006: Autocommit mode: false
+14:17:41,792  INFO DriverManagerConnectionProviderImpl:147 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@CMS_OMDS_LB]
+14:17:41,792  INFO DriverManagerConnectionProviderImpl:152 - HHH000046: Connection properties: {user=CMS_GEM_PRTTYPE_MUON_WRITER, password=****}
+14:17:41,824  INFO Dialect:125 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+14:17:41,825  INFO TransactionFactoryInitiator:68 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:17:41,825  INFO ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+14:17:41,896  INFO DriverManagerConnectionProviderImpl:96 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+14:17:41,896  INFO DriverManagerConnectionProviderImpl:130 - HHH000115: Hibernate connection pool size: 20
+14:17:41,897  INFO DriverManagerConnectionProviderImpl:133 - HHH000006: Autocommit mode: false
+14:17:41,897  INFO DriverManagerConnectionProviderImpl:147 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@CMS_OMDS_LB]
+14:17:41,897  INFO DriverManagerConnectionProviderImpl:152 - HHH000046: Connection properties: {user=CMS_GEM_PRTTYPE_MUON_WRITER, password=****}
+14:17:41,927  INFO Dialect:125 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+14:17:41,928  INFO TransactionFactoryInitiator:68 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:17:41,928  INFO ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+14:17:41,928  WARN TypeFactory:69 - HHH000233: Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@3ce53f6a after already scoped org.hibernate.internal.SessionFactoryImpl@2d82408
+14:17:41,997  INFO DbLoader:225 - commit transaction
