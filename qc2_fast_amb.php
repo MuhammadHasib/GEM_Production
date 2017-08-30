@@ -218,8 +218,9 @@ include "head.php";
 				      <label> Upload Data (EXCEL only) <i class="ace-icon glyphicon glyphicon-barcode"></i></label><br>
 					
 
-				      <!--<input type="file" name="file" id="file" required >-->
-				      <input type="file" name="file" accept=".xls,.xlsx,.xlsm" required >
+				      <!--<input type="file" name="file" id="file" required >
+				      <input type="file" name="file" accept=".xls,.xlsx,.xlsm" required >-->
+						<input type="file" id="file" onchange="checkfile(this);" />
 				  </div>
 				 </div>
 				</div> 
@@ -286,3 +287,17 @@ include "foot.php";
 });
     });
 </script>
+<script type="text/javascript" language="javascript">
+function checkfile(sender) {
+    var validExts = new Array(".xlsx", ".xls", ".xlsm");
+    var fileExt = sender.value;
+    fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+    if (validExts.indexOf(fileExt) < 0) {
+      alert("Invalid file selected, valid files are of " +
+               validExts.toString() + " types.");
+      return false;
+    }
+    else return true;
+}
+</script>
+
