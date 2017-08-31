@@ -87,8 +87,8 @@ function unlinkr($dir, $pattern = "*") {
 }
 $dir= getcwd();
 //echo $dir;
-//unlinkr ($dir, "*.xml");
-//unlinkr ($dir, "*.zip");
+unlinkr ($dir, "*.xml");
+unlinkr ($dir, "*.zip");
 ?>
 <//?php include "side.php"; ?>
 <?php
