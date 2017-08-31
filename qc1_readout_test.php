@@ -239,7 +239,7 @@ include "head.php";
 
 				      <!--<input type="file" name="file" id="file" required >
 				      <input type="file" name="file" accept=".xls,.xlsx,.xlsm" required >-->
-						<input type="file" id="file" onchange="checkfile(this);" />
+						<input type="file" name="file" id="file" onchange="checkfile(this);" required />
 				  </div>
 				 </div> 
 		      <div class="col-xs-6 panel-info panel " style="padding-left: 0px; padding-right: 0px;">
