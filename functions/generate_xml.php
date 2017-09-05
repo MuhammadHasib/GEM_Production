@@ -276,7 +276,7 @@ function SendXML($LocalFilePATH) {
 //    $target_url = "http://gem-machine-a.cern.ch/cmsdbldr/gem/int2r";
 //    $target_url = "http://gem-machine-b.cern.ch/cmsdbldr/gem/int2r";
     //$target_url = "http://cmsgem.cern.ch/gem/cmsdbldr";
-    //$target_url = "http://cmsgem.cern.ch/gem/cmsdbldr/gem/omds";
+    $target_url = "http://cmsgem.cern.ch/gem/cmsdbldr/gem/omds";
      
      
 
