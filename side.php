@@ -9,6 +9,7 @@
                 <li id="<?= $READOUT_ID; ?>" class=""><a href="list_parts_readout.php">READOUTs</a>  
                 <li id="<?= $OPTOHYBRID_ID; ?>" class=""><a href="list_parts_opto.php">OPTOHYBRIDs</a>
                 <li id="<?= $VFAT_ID; ?>" class=""><a href="list_parts_vfat.php">VFATs</a>
+                <li id="<?= $AMC_ID; ?>" class=""><a href="list_parts_amc.php">AMCs</a>
                 <li id="<?= $FRAME_ID; ?>" class=""><a href="list_parts_frame.php">FRAMEs</a>  
             </ul>
         </li>

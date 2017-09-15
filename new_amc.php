@@ -1,7 +1,7 @@
-
 <?php
 include "head.php";
 ?>
+ 
 <?php
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     include_once "functions/functions.php";
@@ -25,17 +25,14 @@ include "head.php";
                         $temp[$BARCODE] = $_POST['barcode'];
                     }
                     
-                        $kindOfPart = $READOUT_KIND_OF_PART_NAME;
+                        $kindOfPart = $AMC13_KIND_OF_PART_NAME;
                         //echo  $kindOfPart;
                         $temp[$KIND_OF_PART] = $kindOfPart;
                     
-                   	//echo $logName;
-	  	        $temp[$RECORD_INSERTION_USER] = $logName;
- 
+                    
                     //if (isset($logName)) {
-                      //  echo $logName;
-                      //  $temp[$RECORD_INSERTION_USER] = $logName;
-                        //$temp[$RECORD_INSERTION_USER] = $logName;
+                        //echo $logName;
+                        $temp[$RECORD_INSERTION_USER] = $logName;
                     //}
                   
                     if (isset($_POST['manufacturer']) && !empty($_POST['manufacturer'])) {
@@ -47,10 +44,10 @@ include "head.php";
                     $res_arr = generateXml($arr);
                     
                     // Set session variables with the return 
-                    //session_start() ;
+                   // session_start() ;
                     $_SESSION['post_return'] = $res_arr;
                     $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
-      <strong>Well done!</strong> You successfully created XML file for GEM PCB Readout <strong>ID:</strong> ' . $_POST['serial'] .
+      <strong>Well done!</strong> You successfully created XML file  for AMC <strong>ID:</strong> ' . $_POST['serial'] .
                     '</div>';
                     // redirect to confirm page
                     header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
@@ -58,60 +55,21 @@ include "head.php";
                 }
             } else {
                 ?>
-<?php include "head_panel.php"; ?>
 <//?php
 include "head.php";
 ?>
-<style>
-    .scrollable-menu {
-    height: auto;
-    max-height: 200px;
-    overflow-x: hidden;
-}
-    /* Flashing */
-    .hover13 a:hover img {
-        opacity: 1;
-        -webkit-animation: flash 1.5s;
-        animation: flash 1.5s;
-        border: 1px inset;
-    }
-    @-webkit-keyframes flash {
-        0% {
-            opacity: .4;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-    @keyframes flash {
-        0% {
-            opacity: .4;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-
-    .rellists{
-        display: none;
-    }
-
-    .rellists .dropdown{
-        margin: 15px;
-    }
-
-</style>
+<?php include "head_panel.php"; ?>
 
 <?php
-//$serial_num_of_newest_part = get_part_ID($READOUT_KIND_OF_PART_ID);
-//if ($serial_num_of_newest_part) {
-//    $serial_num = explode('-', $serial_num_of_newest_part);
-//} else {
-//    $serial_num = array();
-//    $serial_num[3] = "L";
-//    $serial_num[4] = 0000;
-//}
+$serial_num_of_newest_part = get_part_ID($AMC13_KIND_OF_PART_ID,"-1-");
+if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
+    $serial_num = explode('-', $serial_num_of_newest_part);
+    
+} else {  
+    $serial_num = array();
+    $serial_num[2] = "1";
+    $serial_num[3] = 0000;
+}
 //echo $serial_num[3];
 //echo $serial_num[4];
 //echo "loacations"; print_r(get_locations());
@@ -124,9 +82,9 @@ include "head.php";
         <?php include "side.php"; ?>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h2 class="sub-header"> <img src="images/ROPCB.png" width="4%"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Readout  </h2>
+            <h2 class="sub-header"> <img src="images/VFAT_1.PNG" width="4%"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New AMC  </h2>
 
-            <?php
+           <?php
 
                 echo '<div style="display: none" role="alert" class="alert alert-danger ">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong>Error!</strong> Please fill the required fields.
@@ -134,19 +92,17 @@ include "head.php";
                 ?> 
 
 
-                <form method="POST" action="new_readout.php">
-
+            <form method="POST" action="new_amc.php">
                     <div class="row">
                         <div class="col-xs-6 panel-info panel" style="padding-left: 0px; padding-right: 0px;">
                             <div class="panel-heading">
-                                <h3 class="panel-title" >  <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>Readout Information</h3>
+                                <h3 class="panel-title" >  <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>AMC Information</h3>
                             </div>
                             <div class="panel-body">
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="float: left;">Serial Number:&nbsp;</label>
-                                    <!--<div class="serial"><span class="name">PCB-RO-VII-B<span class="batch">1</span>-</span><span id="vers" class="version" >VERSION</span><span class="id">-XXXX</span></div>-->
-                                    <div class="serial"><span class="name">PCB-VIII-RO<span class="batch"></span>-</span><span id="vers" class="version" >VERSION</span><span class="id">-XXXX</span></div>
+                                    <div class="serial"><span class="name">AMC-VI-</span><span id="vers" class="version" >VERSION</span><span class="id">-XXXX<?php /* str_pad($serial_num[3] + 1, 4, 0, STR_PAD_LEFT); */ ?></span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -157,79 +113,20 @@ include "head.php";
                                             <span class="caret"></span>
                                         </button> 
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">Long</a></li>
-                                            <li><a href="#">Short</a></li>
+                                            <li><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
                                         </ul>
                                     </div><br>
-                                   <!-- <div class="dropdown" scrollable-menu>
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Choose Batch Number
-                                            <span class="caret"></span>
-                                        </button> 
-                                        
-					<ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1">
-					    <li><a href="#" class="batchnum">1</a></li>
-                                            <li><a href="#" class="batchnum">2</a></li>
-                                            <li><a href="#" class="batchnum">3</a></li>
-                                            <li><a href="#" class="batchnum">4</a></li>
-                                            <li><a href="#" class="batchnum">5</a></li>
-                                            <li><a href="#" class="batchnum">6</a></li>
-                                            <li><a href="#" class="batchnum">7</a></li>
-                                            <li><a href="#" class="batchnum">8</a></li>
-                                            <li><a href="#" class="batchnum">9</a></li>
-                                            <li><a href="#" class="batchnum">10</a></li>
-                                            <li><a href="#" class="batchnum">11</a></li>
-                                            <li><a href="#" class="batchnum">12</a></li>
-                                            <li><a href="#" class="batchnum">13</a></li>
-                                            <li><a href="#" class="batchnum">14</a></li>
-                                            <li><a href="#" class="batchnum">15</a></li>
-                                            <li><a href="#" class="batchnum">16</a></li>
-                                            <li><a href="#" class="batchnum">17</a></li>
-                                            <li><a href="#" class="batchnum">18</a></li>
-                                            <li><a href="#" class="batchnum">19</a></li>
-                                            <li><a href="#" class="batchnum">20</a></li>
-                                            <li><a href="#" class="batchnum">21</a></li>
-                                            <li><a href="#" class="batchnum">22</a></li>
-                                            <li><a href="#" class="batchnum">23</a></li>
-                                            <li><a href="#" class="batchnum">24</a></li>
-                                            <li><a href="#" class="batchnum">25</a></li>
-                                            <li><a href="#" class="batchnum">26</a></li>
-                                            <li><a href="#" class="batchnum">27</a></li>
-                                            <li><a href="#" class="batchnum">28</a></li>
-                                            <li><a href="#" class="batchnum">29</a></li>
-                                            <li><a href="#" class="batchnum">30</a></li>
-                                            <li><a href="#" class="batchnum">31</a></li>
-                                            <li><a href="#" class="batchnum">32</a></li>
-                                            <li><a href="#" class="batchnum">33</a></li>
-                                            <li><a href="#" class="batchnum">34</a></li>
-                                            <li><a href="#" class="batchnum">35</a></li>
-                                            <li><a href="#" class="batchnum">36</a></li>
-                                            <li><a href="#" class="batchnum">37</a></li>
-                                            <li><a href="#" class="batchnum">38</a></li>
-                                            <li><a href="#" class="batchnum">39</a></li>
-                                            <li><a href="#" class="batchnum">40</a></li>
-                                            <li><a href="#" class="batchnum">41</a></li>
-                                            <li><a href="#" class="batchnum">42</a></li>
-                                            <li><a href="#" class="batchnum">43</a></li>
-                                            <li><a href="#" class="batchnum">44</a></li>
-                                            <li><a href="#" class="batchnum">45</a></li>
-                                            <li><a href="#" class="batchnum">46</a></li>
-                                            <li><a href="#" class="batchnum">47</a></li>
-                                            <li><a href="#" class="batchnum">48</a></li>
-                                            <li><a href="#" class="batchnum">49</a></li>
-                                            <li><a href="#" class="batchnum">50</a></li>
-                                        </ul>
-                                    </div><br>-->
-                                    <div class="dropdown">&nbsp;<b style=" color: red">*</b>
-                                    <label> 4 digits Serial </label><br>
+                                     <div class="dropdown">
+                                        <label> 4 digits Serial </label><br>
                                     <input placeholder="XXXX" class="serialValidation">
                                     <i class="ace-icon fa fa-times-circle alert-danger exist" style="display: none">Already in  Database</i>
                                     <i class="ace-icon fa fa-check-circle alert-success newId" style="display: none"> Valid Serial</i>
-                                </div><br>
-                                    <!--<div class="form-group">
+                                    </div><br>
+                                    <div class="form-group">
                                         <label> Barcode <i class="ace-icon glyphicon glyphicon-barcode"></i></label><br>
                                         <input name="barcode" >
-                                    </div>-->
+                                    </div>
                                     <div class="form-group">
                                         <label for="exampleInputFile" >Location</label>
                                         <input name="location" value="" hidden>
@@ -355,7 +252,7 @@ include "foot.php";
          * [1] Ajax to refresh the Id once enter the page ( 1st time landing )
          */
         $.ajax({
-            url: 'functions/ajaxActions.php?kindid=<?= $READOUT_KIND_OF_PART_ID; ?>',
+            url: 'functions/ajaxActions.php?kindid=<?= $AMC13_KIND_OF_PART_ID; ?>',
             success: function () { /*alert('test');*/
             }
         });
@@ -367,9 +264,9 @@ include "foot.php";
         //setInterval(ajaxCall, 7000); //7000 MS == 7s Seconds
 
         function ajaxCall() {
-            if ($("#vers").text() == "L-") {
+            if ($("#vers").text() == "1-") {
                 $.ajax({
-                    url: 'functions/ajaxActions.php?kindid=<?= $READOUT_KIND_OF_PART_ID; ?>&version=-L-',
+                    url: 'functions/ajaxActions.php?kindid=<?= $AMC13_KIND_OF_PART_ID; ?>&version=-1-',
                     success: function (data) {
                         $(".id").text(data);
                         $(".serialInput").val($(".serial").text());
@@ -378,9 +275,9 @@ include "foot.php";
                 });
 
             }
-            else if ($("#vers").text() == "S-") {
+            else if ($("#vers").text() == "2-") {
                 $.ajax({
-                    url: 'functions/ajaxActions.php?kindid=<?= $READOUT_KIND_OF_PART_ID; ?>&version=-S-',
+                    url: 'functions/ajaxActions.php?kindid=<?= $AMC13_KIND_OF_PART_ID; ?>&version=-2-',
                     success: function (data) {
                         $(".id").text(data);
                         $(".serialInput").val($(".serial").text());
@@ -390,7 +287,7 @@ include "foot.php";
             }
             else {
                 $.ajax({
-                    url: 'functions/ajaxActions.php?kindid=<?= $READOUT_KIND_OF_PART_ID; ?>',
+                    url: 'functions/ajaxActions.php?kindid=<?= $AMC13_KIND_OF_PART_ID; ?>',
                     success: function () { /*alert('test');*/
                     }
                 });
@@ -441,7 +338,6 @@ include "foot.php";
             $('#preloader').fadeOut('fast', function () {});
 
         }
-        
 
 
     })
@@ -458,9 +354,11 @@ include "foot.php";
         
     })
     
-                 jQuery(document).ready(function($) {
-        $("#partslist").show();
-$("#<?= $READOUT_ID; ?>").attr("class","active");
-})
-    
+ jQuery(document).ready(function($) {
+ 
+ $("#partslist").show();
+$("#<?= $AMC13_ID; ?>").attr("class","active");
+
+ })   
+
 </script>
