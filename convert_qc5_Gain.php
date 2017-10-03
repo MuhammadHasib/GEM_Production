@@ -50,18 +50,11 @@ $LocalFilePATH_3 =  $FileName .="_summry.xml";
 //echo $check;
 
 // Send the file to the spool area
-$res_arr = SendXML($LocalFilePATH_2);
+//$res_arr = SendXML($LocalFilePATH);
+$res_arr_2 = SendXML($LocalFilePATH_2);
+$res_arr_3 = SendXML($LocalFilePATH_3);
 //echo $res_arr;
-		  //session_start() ;
-		  $_SESSION['post_return'] = $res_arr;
-		  $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
-    <strong>Well done!</strong> You successfully generated XML file for a list of GEM FOIL(s) data 
-		  </div>';
-		  // redirect to confirm page
-		  header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
-		      die();
-		 
-//echo var_dump($res_arr) ;
+echo var_dump($res_arr_2) ;
 
 }
 ?>
