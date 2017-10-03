@@ -139,6 +139,14 @@
             $(this).parent().parent().parent().prev().val($(this).attr('kind-id'));
             if($(this).val() !== '' && $('.num').val() !== '')$('.subbutt_at').attr('disabled', false);
         }
+        if ($(this).attr("class") == "CHAMBER"){
+            $(this).parent().parent().parent().prev().val();
+            $(this).parent().parent().parent().prev().val($(this).html());
+        }
+        if ($(this).attr("class") == "alert-danger foilalert"){
+            $(this).parent().parent().parent().prev().val();
+            $(this).parent().parent().parent().prev().val($(this).html());
+        }
         // used in Search channel page
         if ($(this).attr("class") == "searchbysdv"){
             $(".searchby").val("");

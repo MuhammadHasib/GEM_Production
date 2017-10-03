@@ -46,7 +46,7 @@ $output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC4_HV_Da
 $LocalFilePATH =  $FileName .=".xml";
 $LocalFilePATH_2 =  $FileName .="_Data.xml";
 $LocalFilePATH_3 =  $FileName .="_summry.xml";
-$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
+//$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
 //echo $check;
 
 // Send the file to the spool area
@@ -79,8 +79,8 @@ function unlinkr($dir, $pattern = "*") {
 }
 $dir= getcwd();
 //echo $dir;
-unlinkr ($dir, "*.xml");
-unlinkr ($dir, "*.zip");
+//unlinkr ($dir, "*.xml");
+//unlinkr ($dir, "*.zip");
 ?>
 <//?php include "side.php"; ?>
 <?php

@@ -574,7 +574,7 @@ function list_chambers() {
 
     $result = array();
     while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
-        echo '<li><a class="foils" href="#"> ' . $row['SERIAL_NUMBER'] . '</a></li>';
+        echo '<li><a class="CHAMBER" href="#"> ' . $row['SERIAL_NUMBER'] . '</a></li>';
     }
     return 1;
 }
@@ -602,7 +602,8 @@ function list_parts($kindId) {
 
     while ($row = oci_fetch_array($query, OCI_ASSOC + OCI_RETURN_NULLS)) {
 
-            echo '<option>' . $row['SERIAL_NUMBER'] . '</option>';
+        //    echo '<option>' . $row['SERIAL_NUMBER'] . '</option>';
+        echo '<li><a class="CHAMBER" href="#"> ' . $row['SERIAL_NUMBER'] . '</a></li>';
   
        
     }

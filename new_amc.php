@@ -123,10 +123,10 @@ if ($serial_num_of_newest_part) {    print_r($serial_num_of_newest_part);
                                     <i class="ace-icon fa fa-times-circle alert-danger exist" style="display: none">Already in  Database</i>
                                     <i class="ace-icon fa fa-check-circle alert-success newId" style="display: none"> Valid Serial</i>
                                     </div><br>
-                                    <div class="form-group">
+                                  <!--  <div class="form-group">
                                         <label> Barcode <i class="ace-icon glyphicon glyphicon-barcode"></i></label><br>
                                         <input name="barcode" >
-                                    </div>
+                                    </div>-->
                                     <div class="form-group">
                                         <label for="exampleInputFile" >Location</label>
                                         <input name="location" value="" hidden>

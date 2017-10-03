@@ -24,9 +24,6 @@ $FileTmp= $_FILES['file']['tmp_name'];
 $FileType= $_FILES['file']['type'];
 $FileSize= $_FILES['file']['size'];
 $FileError=$_FILES['file']['error'];
-//echo var_dump($_POST);
-//echo "<div align='center'>File is Invalid</div>";
-//echo "<div align='center'>Data is loaded into DB for chamber $CHAMBER</div>";
 if (($FileSize > 2000000)){
 	die("Error - File is too Long");
 }
@@ -44,26 +41,28 @@ if (!$FileTmp){
 $out = shell_exec("python QC5_test.py '$CHAMBER' " );
 $outs = trim($out);
 //$test=null;
-$output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC5_Gain_Data.py $FileName '$CHAMBER' $outs '$LOCATION' '$INITIATED_BY_USER' '$COMMENT_DESCRIPTION' '$RUN_BEGIN_TIMESTAMP' '$RUN_END_TIMESTAMP' '$Elog' '$Files' '$comments'");
+$output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC5_Gain_Data.py $FileName '$CHAMBER' $outs $LOCATION $INITIATED_BY_USER '$COMMENT_DESCRIPTION' '$RUN_BEGIN_TIMESTAMP' '$RUN_END_TIMESTAMP' '$Elog' '$Files' '$comments'");
 
 $LocalFilePATH =  $FileName .=".xml";
 $LocalFilePATH_2 =  $FileName .="_Data.xml";
 $LocalFilePATH_3 =  $FileName .="_summry.xml";
-//$check = shell_exec ("zip -r archive-$(date + %Y-%m-%d-%H:%M:%S).zip '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
-//$check = shell_exec ("zip -r 'archive-$("`date + %Y-%m-%d-%H:%M:%S`").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
-$check = shell_exec ("zip -r archive-$("date + %Y-%m-%d-%H:%M:%S").zip $LocalFilePATH $LocalFilePATH_2 $LocalFilePATH_3");
-echo $check;
+//$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
+//echo $check;
 
 // Send the file to the spool area
-//$res_arr = SendXML($check);
+$res_arr = SendXML($LocalFilePATH_2);
+//echo $res_arr;
+		  //session_start() ;
+		  $_SESSION['post_return'] = $res_arr;
+		  $_SESSION['new_chamber_ntfy'] = '<div role="alert" class="alert alert-success">
+    <strong>Well done!</strong> You successfully generated XML file for a list of GEM FOIL(s) data 
+		  </div>';
+		  // redirect to confirm page
+		  header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+		      die();
+		 
 //echo var_dump($res_arr) ;
-//echo var_dump($check) ;
 
-
-// Send the file to the spool area
-//$res_arr = SendXML($LocalFilePATH);
-//echo var_dump($res_arr) ;
-//return $res_arr;
 }
 ?>
 <?php

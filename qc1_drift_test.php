@@ -141,12 +141,13 @@ include "head.php";
 			  <div class="panel-heading">
 			      <h3 class="panel-title" >  <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>On which Drift test performed?</h3>
 			  </div>
-			  <div class="panel-body">
+<!--			  <div class="panel-body">
 		<div style="white-space:nowrap">
                                                         <label for="exampleInputFile">Related DRIFT: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input class="foilinput foil<?= $i ?>" name="foil<?= $i ?>" value="" ><br>
-                                                        <!--multiple=""-->
+                                                        <input class="foil<?= $i ?>" name="foil<?= $i ?>" value="" ><br>
+                                                        multiple=""
                                                         <select tabindex="-1"  class="chosen-select-foil-<?= $i ?>" style="" data-placeholder="Choose DRIFT">
                                                             <option value=""></option>
                                                             <optgroup label="Foil">
@@ -160,7 +161,29 @@ include "head.php";
 
                                                             </optgroup>
                                                         </select>
-                                                        </div>  
+                                                        </div> -->
+
+ <div class="panel-body">
+		   <div class="form-group">
+		       <label for="exampleInputEmail1">Choose Drift:&nbsp;</label>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		      <!-- <p class="help-block">help text here.</p>--> 
+		       <!--<input name="chamber1Id" &nbsp value=""  >-->
+		       <!--<input class="runinput" name="CHAMBER" &amp; value="" hidden >-->
+		       <input class="CHAMBER" href="#"  name="CHAMBER" value=""  /> 
+			<div class="dropdown"  scrollable-menu>
+			   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"     aria-haspopup="true" aria-expanded="true">
+			       Drift
+			       <span class="caret"></span>
+			   </button>
+			   <ul class="dropdown-menu scrollable-menu"  aria-labelledby="dropdownMenu1">
+			      <//?php htmlentities(stripslashes(utf8_decode (list_chambers()))); ?>
+			      <//?php list_chambers(); ?>
+					<?php list_parts($DRIFT_KIND_OF_PART_ID); ?>
+			  </ul>
+		       </div>
+			</div>
+ 
 		 <!--<div class="form-group">
 		       <label for="exampleInputEmail1">Choose Chamber:&nbsp;</label>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->

@@ -18,7 +18,7 @@ $COMMENT_DESCRIPTION = $_POST['COMMENT_DESCRIPTION'];
 $Elog= $_POST['Elog_Link'];
 $Files= $_POST['File_Name'];
 $comments= $_POST['comment'];
-
+echo var_dump($CHAMBER);
 $FileName= $_FILES['file']['name'];
 $FileTmp= $_FILES['file']['tmp_name'];
 $FileType= $_FILES['file']['type'];
@@ -47,13 +47,13 @@ $output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC1_drift
 $LocalFilePATH =  $FileName .=".xml";
 $LocalFilePATH_2 =  $FileName .="_Data.xml";
 $LocalFilePATH_3 =  $FileName .="_summry.xml";
-$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
+//$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
 //echo $check;
 
 // Send the file to the spool area
 //$res_arr = SendXML($check);
 //echo $res_arr;
-echo var_dump($res_arr) ;
+//echo var_dump($res_arr) ;
 
 }
 ?>

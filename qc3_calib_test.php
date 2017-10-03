@@ -66,7 +66,7 @@
     <strong>Well done!</strong> You successfully generated XML file for a list of GEM FOIL(s) data 
 		  </div>';
 		  // redirect to confirm page
-		  header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+		  header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
 		      die();
 		 
 	  }
@@ -148,7 +148,7 @@ include "head.php";
 		      <!-- <p class="help-block">help text here.</p>--> 
 		       <!--<input name="chamber1Id" &nbsp value=""  >-->
 		
-		       <input class="runinput" name="CHAMBER" &amp; value=""  >
+		       <input class="runinput" name="CHAMBER" &amp; value="" hidden  >
 		       <!--<input class="foils" href="#" name="SERIAL_NUMBER" value="" hidden/> -->
 			<div class="dropdown" >
 			   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"     aria-haspopup="true" aria-expanded="true">

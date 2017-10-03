@@ -148,7 +148,7 @@ include "head.php";
 		      <!-- <p class="help-block">help text here.</p>--> 
 		       <!--<input name="chamber1Id" &nbsp value=""  >-->
 		       <!--<input class="runinput" name="CHAMBER" &amp; value="" hidden >-->
-		       <input class="foils" href="#" name="CHAMBER" value="" /> 
+		       <input class="foils" href="#" name="CHAMBER" value="" hidden/> 
 			<div class="dropdown"  scrollable-menu>
 			   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"     aria-haspopup="true" aria-expanded="true">
 			       Chamber

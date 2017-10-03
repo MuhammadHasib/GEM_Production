@@ -148,15 +148,15 @@ include "head.php";
 		      <!-- <p class="help-block">help text here.</p>--> 
 		       <!--<input name="chamber1Id" &nbsp value=""  >-->
 		       <!--<input class="runinput" name="CHAMBER" &amp; value="" hidden >-->
-		       <input class="foils" href="#" name="CHAMBER" value="" /> 
+		       <input class="CHAMBER" href="#"  name="CHAMBER" value="" hidden /> 
 			<div class="dropdown"  scrollable-menu>
 			   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"     aria-haspopup="true" aria-expanded="true">
 			       Chamber
 			       <span class="caret"></span>
 			   </button>
 			   <ul class="dropdown-menu scrollable-menu"  aria-labelledby="dropdownMenu1">
-			      <?php htmlentities(stripslashes(utf8_decode (list_chambers()))); ?>
-			      <//?php get_locations(); ?>
+			      <//?php htmlentities(stripslashes(utf8_decode (list_chambers()))); ?>
+			      <?php list_chambers(); ?>
 			  </ul>
 		       </div>
 			<div class="panel-body">
@@ -187,7 +187,7 @@ include "head.php";
 				      <div class="form-group">
 				      <lable>Location:</lable><br>
 				       <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-				     <input class="runinput" name="LOCATION" value=""  hidden> 
+				     <input class="runinput" name="LOCATION" value="" hidden > 
 				      <div class="dropdown" scrollable-menu>
 					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 					      Choose Location

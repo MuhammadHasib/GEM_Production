@@ -221,7 +221,7 @@ def generateXMLData5(dataSetTag,timeMinutesText,tempText,pressText,humiText,imon
     data = SubElement(dataSetTag, 'DATA')
     timeMinutes = SubElement(data, 'TIME')
     timeMinutes.text = timeMinutesText
-    temp = SubElement(data, 'TEMP_DEGC')
+    temp = SubElement(data, 'TEMP_DEGG')
     temp.text=tempText
     press=SubElement(data,'PRESSURE_MBAR')
     press.text=pressText
