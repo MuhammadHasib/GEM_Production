@@ -1,1 +1,8 @@
 /nbproject/private/
+
+*.xml
+*~
+*.pyc
+*.xlsm
+*.xlsx
+*.zip
