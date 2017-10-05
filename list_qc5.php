@@ -20,8 +20,8 @@ include "head.php";
             <a href="qc5_gain_test.php">
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="images/c1.bmp" class="img-responsive" alt="Generic placeholder thumbnail" style="width: 150px;">
-              <h4>Gain Test</h4>
-              <span class="text-muted">Gain Test</span>
+              <h4>Effective Gain Test</h4>
+              <span class="text-muted"> Effective Gain Test</span>
             </div>
             </a>
           </div>

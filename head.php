@@ -145,11 +145,15 @@ vertical-align:text-center; border-radius: 25px; margin-top: -8px;">  GEM Detect
           <ul class="nav navbar-nav navbar-right">
             <!--<li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, <?php echo $userInfo['name'];?></a></li>-->
             <li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, <?php echo $logName;?></a></li>
+            <li><a href="https://cmsomsdet.cern.ch/gem/" target="_blank">GEM-OMS</a></li>
+            <li><a href="https://cmsonline.cern.ch/webcenter/portal/cmsonline/pages_common/elog" target="_blank">GEM-Elog</a></li>
+            <!--<li><a href="https://cernbox.cern.ch/" target="_blank">CERNBox</a></li>-->
             <li><a href="first.php">Dashboard</a></li>
             <!-- <li><a href="#">Settings</a></li> -->
             <!--  <li><a href="profile.php">Profile</a></li> -->
             <li><a href="how_to_use.php">How to use</a></li>
             <li><a href="contact.php">Contact</a></li>
+            <li><a href="https://login.cern.ch/adfs/ls/?wa=wsignout1.0">Sign Out</a></li>
           </ul>
            
         </div>

@@ -66,12 +66,12 @@ def xml_from_excel5(excel_file):
 	expo3 = sh.cell(51,5).value
 	expo4 = sh.cell(52,5).value
 	rate1 = sh.cell(53,5).value
-	root = generateXMLHeader("QC5_EFF_GAIN_CONFIG","GEM Chamber QC5 Effective Gain Config",str(location) + " GEM Chamber QC5 Effective Gain",Run,Start,Stop,comment,location,user)
+	root = generateXMLHeader("QC5_EFF_GAIN_CONFIG","GEM Chamber QC5 Effective Gain Config", str(location) + " GEM Chamber QC5 Effective Gain",Run,Start,Stop,comment,location,user)
 	dataSet = generateDataSet(root,Comment,"1","GEM Chamber",chamber)
 	generateXMLData5a(dataSet,str(user),pre,str(amp),str(coa), str(fine), str(itime),str(dtime),str(disc),str(thrs),str(walk),str(width),str(scal),str(daq),str(pico),str(tred),str(tblack),str(tgreen),str(source),str(hvlt),str(current),str(nbpri),str(eta),str(gas),str(gfac),str(flow),str(req),str(divi))
 	writeToFile(fileName, tostring(root))
 	
-	root = generateXMLHeader("QC5_EFF_GAIN_DATA","GEM Chamber QC5 Effective Gain Data","BGEM Chamber QC5 Effective Gain ",Run,Start,Stop,comment,location,user)
+	root = generateXMLHeader("QC5_EFF_GAIN_DATA","GEM Chamber QC5 Effective Gain Data",str(location) + " GEM Chamber QC5 Effective Gain",Run,Start,Stop,comment,location,user)
 	dataSet = generateDataSet(root,Comment,"1","GEM Chamber",chamber)
 	for row in range(29,sh.nrows):
 		if sh.row_values(row)[4]=='':
@@ -97,7 +97,7 @@ def xml_from_excel5(excel_file):
 		#off_current_error= sh.row_values(row)[17]
 		generateXMLData5(dataSet,str(test_time),str(temp),str(pressure),str(humidity), str(imon), str(vmon),str(vdrift),str(s_count),str(s_error),str(off_count),str(off_error),str(s_current),str(s_current_error))
 		writeToFile(datafile, tostring(root))
-	root = generateXMLHeader("QC5_EFF_GAIN_SUMRY","GEM Chamber QC5 Effective Gain Summary","BGEM Chamber QC5 Effective Gain Summary",Run,Start,Stop,comment,location,user)
+	root = generateXMLHeader("QC5_EFF_GAIN_SUMRY","GEM Chamber QC5 Effective Gain Summary",str(location) + " GEM Chamber QC5 Effective Gain",Run,Start,Stop,comment,location,user)
 	dataSet = generateDataSet(root,Comment,"1","GEM Chamber",chamber)
 	generateXMLData5s(dataSet,str(test_time),str(avtemp), str(amb),str(expo1),str(expo2),str(expo3),str(expo4),str(rate1),str(File),str(Elog),str(Comment))	
 	writeToFile(testfile, tostring(root))

@@ -14,7 +14,7 @@ include "head.php";
           <h1 class="page-header"><img src="images/foil2.png" width="4%"> Foil List</h1>
 
 <a href="new_gem.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new Foil</button></a>
-<a href="new_gem_multi.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="ace-icon glyphicon glyphicon-book"></i> Add Multiple new Foils</button></a>
+<!--<a href="new_gem_multi.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="ace-icon glyphicon glyphicon-book"></i> Add Multiple new Foils</button></a>-->
 <!--<form class="navbar-form navbar-right">
            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> <input class="form-control" placeholder="Search for drift" type="text">
           </form> -->

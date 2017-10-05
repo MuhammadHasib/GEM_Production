@@ -3616,3 +3616,4 @@ Caused by: java.net.SocketException: Socket closed
 10:36:30,465  INFO ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
 10:36:30,465  WARN TypeFactory:69 - HHH000233: Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@5c448433 after already scoped org.hibernate.internal.SessionFactoryImpl@fb713e7
 10:36:30,538  INFO DbLoader:225 - commit transaction
+0 - 0 - 

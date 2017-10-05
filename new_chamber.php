@@ -240,7 +240,7 @@
                             <!-- <span class="text-muted">List single chambers</span> -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" style="float: left;">Serial Number:&nbsp;</label>
-                                    <div class="serial"><span class="name">GE1/1-X-</span><span id="vers" class="version" >VERSION</span>-<span id="inst" class="institute">INSTITUTE</span><span class="id">-XXXX</span></div>
+                                    <div class="serial"><span class="name">GE1/1-X-</span><span id="vers" class="version" >VERSION</span>-<span id="inst" class="institute">LOCATION</span><span class="id">-XXXX</span></div>
                                     <input class="serialInput" name="serial" value="" hidden>
                                 </div>
                                 <div class="form-group">
@@ -257,11 +257,11 @@
                                         </ul>
                                     </div><br>
                                     <div class="form-group">&nbsp;<b style=" color: red">*</b>
-                                        <label for="exampleInputFile" >Institute</label>
-                                        <input name="Institute" value="" hidden>
+                                        <label for="exampleInputFile" >Location</label>
+                                        <input name="location" value="" hidden>
                                         <div class="dropdown">
                                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                Choose Institute
+                                                Choose Location
                                                 <span class="caret"></span>
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -281,7 +281,7 @@
                                         <input name="barcode" >
                                     </div>-->
                                     
-                                    <div class="form-group">
+                                   <!-- <div class="form-group">
                                         <label for="exampleInputFile" >Location</label>
                                         <input name="location" value="" hidden>
                                         <div class="dropdown">
@@ -294,7 +294,7 @@
                                             </ul>
                                         </div>
 
-                                    </div>
+                                    </div>-->
                                    <!-- <div class="form-group">
                                         <label for="exampleInputFile" >Manufacturer</label>
                                         <input name="manufacturer" value="" hidden>

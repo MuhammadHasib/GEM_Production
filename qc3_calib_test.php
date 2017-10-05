@@ -134,7 +134,7 @@ include "head.php";
 	      ?>
 
 	      <!--<form method="POST" action="qc3_leak_test.php" enctype='multipart/form-data'>-->
-	      <form method="POST" action="convert_qc3_Leak.php" enctype='multipart/form-data'>
+	      <form method="POST" action="convert_qc3_Calib.php" enctype='multipart/form-data'>
 			<input type="hidden" name="submited" value="true" /><br>
 		  <div class="row">
 		      <div class="col-xs-6 panel-info panel" style="padding-left: 0px; padding-right: 0px;">

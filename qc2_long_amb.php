@@ -66,7 +66,7 @@
     <strong>Well done!</strong> You successfully generated XML file for a list of GEM FOIL(s) data 
 		  </div>';
 		  // redirect to confirm page
-		  header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+		  header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
 		      die();
 		 
 	  }
@@ -141,13 +141,13 @@ include "head.php";
 			  <div class="panel-heading">
 			      <h3 class="panel-title" >  <span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>On which Foil test performed?</h3>
 			  </div>
-			  <div class="panel-body">
+			 <!-- <div class="panel-body">
 		<div style="white-space:nowrap">
                                                         <label for="exampleInputFile">Related FOIL: </label>
                                                         <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
                                                         <input class="foilinput foil<?= $i ?>" name="foil<?= $i ?>" value="" ><br>
-                                                        <!--multiple=""-->
-                                                        <select tabindex="-1"  class="chosen-select-foil-<?= $i ?>" style="" data-placeholder="Choose FOIL">
+                                                        <multiple=""-->
+                                                        <!--<select tabindex="-1"  class="chosen-select-foil-<?= $i ?>" style="" data-placeholder="Choose FOIL">
                                                             <option value=""></option>
                                                             <optgroup label="Foil">
                                                                 <?php
@@ -160,7 +160,28 @@ include "head.php";
 
                                                             </optgroup>
                                                         </select>
-                                                        </div>  
+                                                        </div>  -->
+ <div class="panel-body">
+		   <div class="form-group">
+		       <label for="exampleInputEmail1">Related FOIL:&nbsp;</label>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		      <!-- <p class="help-block">help text here.</p>--> 
+		       <!--<input name="chamber1Id" &nbsp value=""  >-->
+		       <!--<input class="runinput" name="CHAMBER" &amp; value="" hidden >-->
+		       <input class="CHAMBER" href="#"  name="CHAMBER" value="" hidden /> 
+			<div class="dropdown"  scrollable-menu>
+			   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"     aria-haspopup="true" aria-expanded="true">
+			       Foil
+			       <span class="caret"></span>
+			   </button>
+			   <ul class="dropdown-menu scrollable-menu"  aria-labelledby="dropdownMenu1">
+			      <//?php htmlentities(stripslashes(utf8_decode (list_chambers()))); ?>
+			      <//?php list_chambers(); ?>
+					<?php list_parts($FOIL_KIND_OF_PART_ID); ?>
+			  </ul>
+		       </div>
+			</div>
+
 		 <!--<div class="form-group">
 		       <label for="exampleInputEmail1">Choose Chamber:&nbsp;</label>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
@@ -206,7 +227,7 @@ include "head.php";
 				      <div class="form-group">
 				      <lable>Location:</lable><br>
 				       <span class="alert-danger foilalert" hidden> <i class="ace-icon fa fa-times-circle alert-danger"></i> </span>
-				     <input class="runinput" name="LOCATION" value="" > 
+				     <input class="runinput" name="LOCATION" value=""  hidden> 
 				      <div class="dropdown" scrollable-menu>
 					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 					      Choose Location
@@ -237,8 +258,9 @@ include "head.php";
 				      <label> Upload Data (EXCEL only) <i class="ace-icon glyphicon glyphicon-barcode"></i></label><br>
 					
 
-				      <!--<input type="file" name="file" id="file" required >-->
-				      <input type="file" name="file" accept=".xls,.xlsx,.xlsm" required >
+				      <!--<input type="file" name="file" id="file" required >
+				      <input type="file" name="file" accept=".xls,.xlsx,.xlsm" required >-->
+						<input type="file" name='file' id="file" onchange="checkfile(this);" required />
 				  </div>
 				 </div> 
 		      <div class="col-xs-6 panel-info panel " style="padding-left: 0px; padding-right: 0px;">
@@ -304,3 +326,17 @@ include "foot.php";
 });
     });
 </script>
+<script type="text/javascript" language="javascript">
+function checkfile(sender) {
+    var validExts = new Array(".xlsx", ".xls", ".xlsm");
+    var fileExt = sender.value;
+    fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+    if (validExts.indexOf(fileExt) < 0) {
+      alert("Invalid file selected, valid files are of " +
+               validExts.toString() + " types.");
+      return false;
+    }
+    else return true;
+}
+</script>
+

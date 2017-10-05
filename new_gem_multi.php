@@ -65,7 +65,7 @@ include "head.php";
       <strong>Well done!</strong> You successfully generated XML file for a list of GEM FOIL(s) data 
                     </div>';
                     // redirect to confirm page
-                    header('Location: https://gemdb.web.cern.ch/gemdb/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
+                    header('Location: https://gemdb-p5.web.cern.ch/gemdb-p5/confirmation.php'); //?msg='.$msg."&statusCode=".$statusCode."&return=".$return
                         die();
                    
             }
@@ -112,7 +112,7 @@ echo '<div style="display: none" geble="alert" class="alert alert-danger empty">
                                 <label for="exampleInputFile">How many FOILs do you want to load history information for ?? </label>
                                 <input class="" name="numOfFoils" value=""  onblur="if($(this).val() !== '' )$('.subbutt_at').attr('disabled', false);">
                             </div>
-                            <button type="submit" class="btn btn-default btn-lg subbutt_at" disabled="true" >Next</button>
+                            <button type="submit" class="btn btn-default btn-lg subbutt_at"  >Next</button>
                         </form>
                     <?php } ?>
 
