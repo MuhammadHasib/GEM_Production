@@ -44,19 +44,29 @@ $outs = trim($out);
 //$test=null;
 $output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC5_Gain_Data.py $FileName '$CHAMBER' $outs $LOCATION $INITIATED_BY_USER '$COMMENT_DESCRIPTION' '$RUN_BEGIN_TIMESTAMP' '$RUN_END_TIMESTAMP' '$Elog' '$Files' '$comments'");
 
-//$LocalFilePATH =  $FileName .=".xml";
-$LocalFilePATH_2 =  $FileName .="_Data.xml";
-//$LocalFilePATH_3 =  $FileName .="_summry.xml";
-//$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
-//$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
+$LocalFilePATH =  $FileName .".xml";
+$LocalFilePATH_2 =  $FileName ."_Data.xml";
+$LocalFilePATH_3 =  $FileName ."_summry.xml";
+//$check = shell_exec ("zip  archive-$(date +'%Y-%m-%d-%H-%M-%S').zip -r . -i $LocalFilePATH $LocalFilePATH_2 $LocalFilePATH_3");
+$check = shell_exec ("zip  archive-$(date +'%Y-%m-%d-%H-%M-%S').zip $LocalFilePATH $LocalFilePATH_2 $LocalFilePATH_3");
 //echo $check;
 
+
+{
+//foreach (glob("images/*.jpg") as $large) 
+foreach (glob("*.zip") as $filename) { 
+
+//echo "$filename\n";
+//echo str_replace("","","$filename\n");
+
+echo str_replace("","","<a href='$filename'>$filename</a>\n");
+
+}
+}
 // Send the file to the spool area
-//$res_arr = SendXML($LocalFilePATH);
-$res_arr_2 = SendXML($LocalFilePATH_2);
-//$res_arr_3 = SendXML($LocalFilePATH_3);
+$res_arr = SendXML($filename);
 //echo $res_arr;
-echo var_dump($res_arr_2) ;
+echo var_dump($res_arr) ;
 
 }
 ?>
@@ -84,6 +94,8 @@ function unlinkr($dir, $pattern = "*") {
 $dir= getcwd();
 //echo $dir;
 unlinkr ($dir, "*.xml");
+unlinkr ($dir, "*.xls");
+unlinkr ($dir, "*.xlsm");
 unlinkr ($dir, "*.zip");
 ?>
 <//?php include "side.php"; ?>

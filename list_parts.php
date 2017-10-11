@@ -43,10 +43,10 @@ include "head.php";
                             <a href="list_parts_drift.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                          <h4 class="sub-header"><img src="images/VFAT_1.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> VFAT </h4>
+                               <h4 class="sub-header"><img src="images/GEB.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> GEM External Frame </h4>
 
-                            <a href="new_vfat.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
-                            <a href="list_parts_vfat.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
+                            <a href="new_frame.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
+                            <a href="list_parts_frame.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
                         </div>
 
                     </div>
@@ -68,10 +68,10 @@ include "head.php";
                     </div>
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                               <h4 class="sub-header"><img src="images/GEB.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> GEM External Frame </h4>
+                          <h4 class="sub-header"><img src="images/VFAT_1.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> VFAT </h4>
 
-                            <a href="new_frame.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
-                            <a href="list_parts_frame.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
+                            <a href="new_vfat.php"><button type="button" class="btn btn-success"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></a>
+                            <a href="list_parts_vfat.php"><button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> List</button></a>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                <h4 class="sub-header"><img src="images/GEB.png" width="20%"> <!--<span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>--> GEM AMC Board </h4>

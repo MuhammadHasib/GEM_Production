@@ -31,7 +31,7 @@ def xml_from_excel3(excel_file):
 	Comments=sys.argv[10]
 	Run =sys.argv[2]
 	
-	root = generateXMLHeader("QC3_GAS_LEAK_DATA","GEM Chamber QC3 Gas Leak Data","CERN Station A GEM QC3 Gas Leak Data",Run,Start,Stop,comment,location,user)
+	root = generateXMLHeader("QC3_GAS_LEAK_DATA","GEM Chamber QC3 Gas Leak Data",str(location) + " GEM QC3 Gas Leak Data",Run,Start,Stop,comment,location,user)
 	dataSet = generateDataSet(root,Comments,"1","GEM Chamber",chamber)	
 	for row in range(1,sh.nrows):
 			seconds= sh.row_values(row)[1]
@@ -60,7 +60,7 @@ def xml_from_excel3(excel_file):
 	elog=sys.argv[8]
 	File=sys.argv[9]
 	#Comments=sys.argv[10]
-	root = generateXMLHeader("QC3_GAS_LEAK_DATA_SUMRY","GEM Chamber QC3 Gas Leak Data Summary","CERN Station QC3 Gas Leak Data Summary",Run,Start,Stop,comment, location,user)
+	root = generateXMLHeader("QC3_GAS_LEAK_DATA_SUMRY","GEM Chamber QC3 Gas Leak Data Summary",str(location) + " GEM QC3 Gas Leak Data",Run,Start,Stop,comment, location,user)
 	dataSet = generateDataSet(root,Comments,"1","GEM Chamber",chamber)
 	generateXMLData3a(dataSet, str(test_date) ,str(avgtemp),str(stdtemp),str(avgpre),str(stdpre),str(initpre),str(finalpre),str(duration),str(leakrate),str(expofitp0),str(expofitp1),str(expofitR2),str(elog),str(File),str(Comments))
 	writeToFile1(testfile, tostring(root))

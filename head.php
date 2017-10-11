@@ -53,16 +53,16 @@ $result = file_get_contents($url, false, $context);
 //var_dump($result);
     
 $xml = simplexml_load_string($result);
-
+//echo $xml
 //print_r($xml);
 $userInfo = (array)$xml;
 //echo $userInfo;
 session_start();
 $_SESSION['user'] = $userInfo['login'];
-
+echo $userInfor;
 //print_r($userInfo);
 //print_r($data);
-echo $userInfo['name'];
+//echo $userInfo['name'];
 /*****************************************/
 /******* End Get user Information ********/
 /*****************************************/
@@ -143,7 +143,7 @@ vertical-align:text-center; border-radius: 25px; margin-top: -8px;">  GEM Detect
           </form> 
             
           <ul class="nav navbar-nav navbar-right">
-            <!--<li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, <?php echo $userInfo['name'];?></a></li>-->
+            <!--<li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, <?php echo $userInfo['user'];?></a></li>-->
             <li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, <?php echo $logName;?></a></li>
             <li><a href="https://cmsomsdet.cern.ch/gem/" target="_blank">GEM-OMS</a></li>
             <li><a href="https://cmsonline.cern.ch/webcenter/portal/cmsonline/pages_common/elog" target="_blank">GEM-Elog</a></li>

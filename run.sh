@@ -1,3 +1,6 @@
 #!/bin/bash
-zip -r "archive-$(date +"%Y-%m-%d-%H:%M:%S").zip" GE11-X-S-CERN-0002_QC5_20170530.xlsx.xml GE11-X-S-CERN-0002_QC5_20170530.xlsx_Data.xml GE11-X-S-CERN-0002_QC5_20170530.xlsx_summry.xml
+chamber=sys.argv[1]
+chamber1=sys.argv[2]
+chamber2=sys.argv[3]
+zip -r "archive-$(date +"%Y-%m-%d-%H:%M:%S").zip" $chamber $chamber1 $chamber2
 #zip -r "archive-$(date +"%Y-%m-%d-%H:%M:%S").zip" 

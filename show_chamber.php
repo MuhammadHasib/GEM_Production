@@ -129,7 +129,7 @@ include "head.php";
                                         <tbody>
                                             <tr>
                                                 <td>Serial Number</td>
-                                                <td><?php echo $_GET["id"]; ?></td>
+                                                <td><//?php echo $_GET["id"]; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Manufacturer name:</td>

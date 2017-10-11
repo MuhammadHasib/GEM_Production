@@ -7,7 +7,8 @@ include_once "functions/globals.php";
 include_once "functions/generate_xml.php";
 $conn = database_connection();
 //if(isset($_FILES["file"])){
-$CHAMBER= $_POST['CHAMBER'];
+$CHAMBERS= $_POST['CHAMBER'];
+$CHAMBER= trim($CHAMBERS);
 $RUN_NUMBER = $_POST['RUN_NUMBER'];
 $RUN_TYPE = $_POST['RUN_TYPE'];
 $RUN_BEGIN_TIMESTAMP = date($_POST['RUN_BEGIN_TIMESTAMP'].':s');
@@ -38,26 +39,33 @@ if (!$FileTmp){
   ?>
 <?php include "head_panel.php"; ?>
 <?php
-$out = shell_exec("python QC5_test.py '$CHAMBER' " );
+$out = shell_exec("python QC3_calib.py '$CHAMBER' " );
 $outs = trim($out);
 //$test=null;
-$output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC5_Gain_Data.py $FileName '$CHAMBER' $outs $LOCATION $INITIATED_BY_USER '$COMMENT_DESCRIPTION' '$RUN_BEGIN_TIMESTAMP' '$RUN_END_TIMESTAMP' '$Elog' '$Files' '$comments'");
+$output=shell_exec("/afs/cern.ch/user/h/hamd/www/dev/my_env/bin/python QC3_Calib_Data.py '$FileName'  '$outs' '$LOCATION' '$INITIATED_BY_USER' '$COMMENT_DESCRIPTION' '$RUN_BEGIN_TIMESTAMP' '$RUN_END_TIMESTAMP' '$Elog' '$Files' '$comments' '$CHAMBER'");
 
-$LocalFilePATH =  $FileName .=".xml";
-$LocalFilePATH_2 =  $FileName .="_Data.xml";
-$LocalFilePATH_3 =  $FileName .="_summry.xml";
-//$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
-//$check = shell_exec ("zip -r 'archive-$(date +"%Y-%m-%d %H%M%S").zip' '$LocalFilePATH' '$LocalFilePATH_2' '$LocalFilePATH_3'");
-//echo $check;
+$LocalFilePATH =  $FileName .".xml";
+$LocalFilePATH_2 =  $FileName ."_summry.xml";
+$check = shell_exec ("zip  archive-$(date +'%Y-%m-%d-%H-%M-%S').zip $LocalFilePATH $LocalFilePATH_2");
 
+{
+//foreach (glob("images/*.jpg") as $large) 
+foreach (glob("*.zip") as $filename) { 
+
+//echo "$filename\n";
+//echo str_replace("","","$filename\n");
+
+echo str_replace("","","<a href='$filename'>$filename</a>\n");
+
+}
+}
 // Send the file to the spool area
-$res_arr = SendXML($LocalFilePATH);
-$res_arr_2 = SendXML($LocalFilePATH_2);
-$res_arr_3 = SendXML($LocalFilePATH_3);
+$res_arr = SendXML($filename);
 //echo $res_arr;
 echo var_dump($res_arr) ;
 
 }
+
 ?>
 <?php
 function unlinkr($dir, $pattern = "*") {
@@ -83,6 +91,8 @@ function unlinkr($dir, $pattern = "*") {
 $dir= getcwd();
 //echo $dir;
 unlinkr ($dir, "*.xml");
+unlinkr ($dir, "*.xls");
+unlinkr ($dir, "*.xlsm");
 unlinkr ($dir, "*.zip");
 ?>
 <//?php include "side.php"; ?>

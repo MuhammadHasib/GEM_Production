@@ -29,6 +29,7 @@ include "head.php";
 <!--                  <th>Status</th>-->
                   <th>User responsible</th>
                   <th>Show</th>
+                  <th>Edit</th>
                 </tr>
               </thead>
               <tbody>
@@ -42,6 +43,7 @@ include "head.php";
                   
                   <td><span aria-hidden="true" class="glyphicon glyphicon-user"> '.$chamber['RECORD_INSERTION_USER'].' </span></td>
                   <td><a href="show_chamber.php?id='.$chamber['SERIAL_NUMBER'].'"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Show</button></a></td>
+                  <td><a href="edit_chamber.php?id='.$chamber['SERIAL_NUMBER'].'"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Edit</button></a></td>
                 </tr>';
           }
           

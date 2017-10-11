@@ -41,11 +41,11 @@ def xml_from_excel4(excel_file):
 	comment=sys.argv[6]
 	Comment=sys.argv[11]
 	Run=sys.argv[3]
-	root = generateXMLHeader("QC4_HVTEST_CONFI","GEM Chamber QC4 HVTEST Configuration","CERN Station A GEM QC4 HV Test",Run,Start,Stop,comment,location,user)
+	root = generateXMLHeader("QC4_HVTEST_CONFIG","GEM Chamber QC4 HVTEST Configuration",str(location) + " GEM QC4 HV Test",Run,Start,Stop,comment,location,user)
 	dataSet = generateDataSet(root,Comment,"1","GEM Chamber",chamber)
 	generateXMLData4a(dataSet,str(req), str(pre),str(amp),str(coa), str(fine), str(itime),str(dtime),str(disc),str(thrs),str(scal),str(daq))
 	writeToFile(fileName, tostring(root))
-	root = generateXMLHeader("QC4_HVTEST_DAT","GEM Chamber QC4 HVTEST Data","CERN Station A GEM QC4 HV Test",Run,Start,Stop,comment,location,user)
+	root = generateXMLHeader("QC4_HVTEST_DATA","GEM Chamber QC4 HVTEST Data",str(location) + " GEM QC4 HV Test",Run,Start,Stop,comment,location,user)
 	dataSet = generateDataSet(root,Comment,"1","GEM Chamber",chamber)
 	for row in range(3, sh.nrows):
 		if sh.row_values(row)[0]=='':
@@ -74,7 +74,7 @@ def xml_from_excel4(excel_file):
 	Filename= sys.argv[10]
 	Elog=sys.argv[9]
 	#Comment=sys.argv[11]
-	root = generateXMLHeader("QC4_HVTEST_SUMR","GEM Chamber QC4 HVTEST Summary","CERN Station A GEM QC4 HV Test Summary",Run,Start,Stop,comment,location,user)
+	root = generateXMLHeader("QC4_HVTEST_SUMRY","GEM Chamber QC4 HVTEST Summary",str(location) + " GEM QC4 HV Test",Run,Start,Stop,comment,location,user)
 	dataSet = generateDataSet(root,Comment,"1","GEM Chamber",chamber)
 	generateXMLData4s(dataSet,test_date,str(v_max),str(i_max),str(v_drift),str(r_euq), str(r_err), str(r_diff),str(spr_signal),str(Filename),str(Elog),str(Comment))
 	writeToFile(testfile, tostring(root))
